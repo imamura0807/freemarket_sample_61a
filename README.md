@@ -24,7 +24,7 @@
 |name|string|null: false|
 |name_kana|string|null: false|
 |postal_code|string|null: false|
-|prefectures_id|integer|null: false|
+|prefecture|integer|null: false|
 |mayor_town|string|null: false|
 |address|string|null: false|
 |building_name|string|null: false|
@@ -88,6 +88,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null: false|
 ### Association
 - has_many :products
 
