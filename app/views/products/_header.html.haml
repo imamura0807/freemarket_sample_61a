@@ -1,0 +1,45 @@
+.header-2
+  .header-2__global
+    .global__row-1
+      .row-1__right
+        =link_to '#', class: 'home'  do
+          .home-btn
+           
+
+      .row-1__left
+        %input.kennsaku{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+        .kennsaku__right
+          .serch__btn
+            %i.fas.fa-search
+
+            
+          
+
+    .global__row-2
+      .row-2__right
+        .right__box
+          =link_to '#', class: 'list' do
+            %i.fas.fa-list 
+            カテゴリから探す
+        .right__box
+          = link_to '#', class: 'list' do
+            %i.fas.fa-tag
+            ブランドから探す
+
+      .row-2__left
+        .left__iine
+          = link_to '#', class: 'icon'  do
+            %i.fal.fa-heart
+            いいね!一覧
+        .left__osirase
+          = link_to '#', class: 'icon'  do
+            %i.fal.fa-bell
+            お知らせ
+        .left__yarukotorisuto
+          = link_to '#', class: 'icon'  do
+            %i.fal.fa-check
+            やることリスト
+        .left__maipe-ji
+          = link_to '#' , class: 'icon'  do
+            %i.fas.fa-user-circle
+            マイページ
