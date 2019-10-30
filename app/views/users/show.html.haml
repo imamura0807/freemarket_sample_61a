@@ -1,0 +1,45 @@
+= render partial: "home-1"
+%main.container-1
+  .side 
+    = render partial: "side"
+  .contents
+    %section.mypage__user-icon
+      = link_to '#', class:'user_icon' do
+        %figure
+          %img{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
+        %h2.user-name SAKI
+        .mypage-number
+          %div
+            評価
+            %span.bold 0
+          %div
+            出品数
+            %span.bold 0
+    %section.mypage__tab-container-notification-todo
+      %ul.tabs
+        %li.active
+          %h3
+            = link_to '#', class: 'list' do
+              お知らせ
+        %li
+          %h3
+            = link_to '#', class:'list' do
+              やることリスト
+    .tab-content
+      %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+        %li
+        %li
+        %li.mypage-go-list
+    %aside.modal{"data-close" => "modal", "data-modal" => "banner"}
+    %section.mypage__tab-container
+      %h2.mypage__tab-head 購入した商品
+      %ul.tabs
+        %li
+          %h3
+            = link_to '#', class: 'list' do
+              取引中
+        %li
+          %h3
+            = link_to '#', class: 'list' do
+              過去の取引
+= render partial: "banner"
