@@ -1,184 +1,8 @@
-*{box-sizing: border-box;}
-div{display: block;}
-.header-2{
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  position: relative;
-  z-index: 3;
-
-    .header-2__global{
-      width: 1020px;
-      margin: 0 auto;
-      padding: 8px 0 0;
-
-    
-      .global__row-1{
-        display: flex;
-        text-align: justify;
-        justify-content: space-between;
-
-        .row-1__right{
-          text-align: center;
-          align-items: center;
-          display: flex;
-          height: 40px;
-          margin-right: 45px;
-          
-          .home{
-            color: inherit;
-            text-decoration: none;
-    
-              .home-btn{
-                height: 36px;
-                width: 143px;
-              }
-          }
-        }
-        .row-1__left{
-          position: relative;
-          width: 100%;
-        
-
-          .kennsaku{
-            background-color: rgb(245, 245, 245);
-            font-size: 16px;
-            height: 40px;
-            line-height: 1.4em;
-            position: relative;
-            width: 100%;
-            appearance: none;
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(204, 204, 204);
-            border-image: initial;
-            border-radius: 4px;
-            outline: none;
-            padding: 0px 50px 0px 10px;
-            transition: all 0.3s ease-out 0s;
-          }
-            .kennsaku__right{
-              background-color: transparent;
-              height: 40px;
-              position: absolute;
-              right: 0px;
-              top: 0px;
-              width: 40px;
-              -webkit-appearance: none;
-              border-width: initial;
-              border-style: none;
-              border-color: initial;
-              border-image: initial;
-              border-radius: 0px 4px 4px 0px;
-              padding: 0px;
-            
-            }
-            .serch__btn{
-              font: normal normal normal 14px/1 FontAwesome;
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(34, 34, 34);
-              height: 14px;
-              margin-top: 2px;
-              width: 14px;
-            }
-          
-          
-        }
-      }
-    
-      .global__row-2{
-        display: flex;
-        -webkit-box-pack: justify;
-        // ボックス内の子要素の横方向の配置を指定する   余ったスペースは各子の間に均等に分割
-        justify-content: space-between;
-        // 各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる  
-        margin-top: 8px; 
-        
-        
-        .row-2__right{
-          display: flex;
-          margin-left: -3px;
-
-          .right__box{
-            cursor: pointer;
-            height: 44px;
-            position: relative;
-            z-index: 3;
-            padding: 0px 10px;
-            
-
-            .list{
-              text-decoration: none ;
-              display: block;
-              font-size: 14px;
-              font-weight: 600;
-              line-height: 36px;
-              white-space: nowrap;
-              color: black;
-            }  
-            .fas{
-              font: normal normal normal 14px/1 FontAwesome;
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(234, 53, 45);
-              height: 12px;
-              margin-right: 4px;  
-              
-              }
-          }
-        }
-        .row-2__left{
-          display: flex;
-          position: relative;
-          
-          .left__iine{
-            padding-left: 0px;
-            
-          }
-          .left__osirase{
-            padding: 0px 14px;
-            
-
-          }
-          .left__yarukotorisuto{
-            padding: 0px 14px;
-
-          }
-          .left__maipe-ji{
-            padding: 0px 14px;
-
-          }
-          .icon{
-            text-decoration: none ;
-            -webkit-box-align: center;
-            align-items: center;
-            display: flex;
-            font-size: 14px;
-            height: 32px;
-            transform: scale(1);
-            transition: all 0.3s ease-out 0s;
-            color: black;
-          }
-          .fal{
-            font: normal normal normal 14px/1 FontAwesome;
-            max-width: 100%;
-            height: auto;
-            max-height: 100%;
-            color: rgb(204, 204, 204);
-            margin-right: 10px;
-            
-          }
-          .my-icon{
-            height: auto;
-          }
-        }
-      }
-    }
-}
 .contents{
   max-width: 1020px;
   margin: 0px auto;
   // padding: 0px 10px;
+  text-decoration: none;
   
 
   .contents__body{
@@ -219,15 +43,23 @@ div{display: block;}
         padding: 0;
         font-size: 24px;
         flex: 1 1 0%;
+      
       }
-      .mottomoru{
+      .mottomiru{
         font-size: 14px;
         padding: 5px 16px 5px 5px;
         color: rgb(0, 149, 238);
         display: block;
         font-weight: 600;
         position: relative;
+        text-decoration: none;
       }
+        .fa-chevron-right{
+          font: normal normal normal 14px/1 FontAwesome; 
+          color: rgb(0, 149, 238);  
+        }
+        
+      
       .itirann{
         margin: -10px;
         display: flex;
@@ -238,21 +70,65 @@ div{display: block;}
 }
   .contents__top{
     height: 390px;
-    left: 50%;
-    margin-left: -50vw;
-    position: relative;
-    top: 0px;
-    width: 100vw;
-    overflow: hidden;
+    // left: 50%;
+    // margin-left: -50vw;
+    // 左のマージンを指定する
+    // position: relative;
+    // top: 0px;
+    // width: 100vw;
+    // overflow: hidden;
+    text-align: center;
   
     .top-image{
-      text-decoration: none;
+      // text-decoration: none;
       height: 390px;
       background-size: auto;
-      position: relative;
-      background-position: 50% 50%;
+      // position: relative;
+      // background-position: 50% 50%;
+
       
     }
       
   }
+  .exhibit-btn{
+    bottom: 32px;
+    font-size: 22px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+    position: fixed;
+    text-align: center;
+    z-index: 2;
+
+    .exhibit{
+      display: block;
+      text-decoration: none;
+    }
+    .fa__box{
+      margin-top: 15px;
+      width: 60px;
+      height: 54px;
+      margin: 5px auto 0px;
+    
+      .fa-camera{
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 50px;
+        color: white;
+      }
+    }
+    .btn__box{
+      width: 160px;
+      height: 160px;
+      padding-top: 32px;
+      text-align: center;
+      background-color: rgb(234, 53, 45);
+      border-radius: 50%;
+    }
+    .btn__exhibit{
+      font-size: 22px;
+      color: white;
+      
+    }
+  }
+  
   

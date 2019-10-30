@@ -1,46 +1,4 @@
-.header-2
-  .header-2__global
-    .global__row-1
-      .row-1__right
-        =link_to '#', class: 'home'  do
-          .home-btn
-            %img.home-btn{:alt => "Mercari", :src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
-
-      .row-1__left
-        %input.kennsaku{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
-        .kennsaku__right
-          .serch__bt
-            
-          
-
-    .global__row-2
-      .row-2__right
-        .right__box
-          =link_to '#', class: 'list' do
-            %i.fas.fa-list 
-            カテゴリから探す
-        .right__box
-          = link_to '#', class: 'list' do
-            %i.fas.fa-tag
-            ブランドから探す
-
-      .row-2__left
-        .left__iine
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-heart
-            いいね!一覧
-        .left__osirase
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-bell
-            お知らせ
-        .left__yarukotorisuto
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-check
-            やることリスト
-        .left__maipe-ji
-          -# %img.my-icon{:alt => "", :src => "https://static.mercdn.net/thumb/members/859832240.jpg?1420629596"}/
-          マイページ
-
+= render partial: "header" 
 .contents
   .contents__body
     .contents__top
@@ -53,9 +11,23 @@
       .box__list
         .name__box
           .list__name 一覧表示
-          %a.mottomoru{:href => "/jp/category/1/"} もっと見る
+          = link_to '#' , class: 'mottomiru' do
+            もっと見る
+            %i.fas.fa-chevron-right
+              
         .list__itirann
           %ul.itirann
+
+.exhibit-btn
+  = link_to '#', class: 'exhibit'  do
+    -# %i.far.fa-camera
+
+    .btn__box
+      .btn__exhibit 出品
+      .fa__box
+        %i.far.fa-camera.fa-5x 
+      
+
 
 
 
@@ -63,21 +35,3 @@
       
     
 
--# .under
--#   .under__global
--#     .under__global__row-1
--#     .under__global__row-2
-
--# .footer
--#   .footer__global
--#     .footer__global__row-1
--#       メルカリについて
--#     .footer__global__row-2
--#       ヘルプ＆ガイド
--#     .footer__global__row-3
--#       プライバシーと利用規約
--#     .footer__global__row-4
--#       国
--#   .footer__bottom
--#     メルカリ
-  
