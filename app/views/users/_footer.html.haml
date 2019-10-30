@@ -8,12 +8,6 @@
         %li プレスリリース
         %li 公式ブログ
         %li メルカリロゴ利用ガイドライン
-        %li.footer-social-link
-          %a{href: "https://twitter.com/mercari_jp", target: "_blank"}
-            %i.icon-twitter
-        %li.footer-social-link
-          %a{href: "https://www.facebook.com/mercarijp", target: "_blank"}
-            %i.icon-facebook
     .footer-1__cell
       %h2.footer-1__head ヘルプ＆ガイド
       %ul
@@ -45,7 +39,7 @@
         %li 日本
         %li United States
   .footer-1__bottom
-    %a.logo{href: "https://www.mercari.com/jp/"}
-      %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?465897195", width: "124"}/
+    .logo
+      = image_tag 'white-mercari.png',height:'33',width:'124'
     %span.footer-copyright
       %small © 2019 Mercari
