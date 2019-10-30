@@ -4,7 +4,7 @@
   position: relative;
   z-index: 3;
 
-    .header-2__global{
+    &__global{
       width: 1020px;
       margin: 0 auto;
       padding: 8px 0 0;
@@ -27,7 +27,8 @@
             text-decoration: none;
     
               .home-btn{
-                height: 36px;
+                background: url("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg");
+                height: 40px;
                 width: 143px;
               }
           }
