@@ -1,0 +1,36 @@
+.side{
+  width: 280px;
+  margin: 0 40px 0 0;
+  .mypage__nav-list li{
+    border-top: 1px solid #eee;
+    .item{
+      position: relative;
+      display: block;
+      min-height: 48px;
+      padding: 16px;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+    .item:hover { color:black; background-color:#D3D3D3;  }
+    .fa-chevron-right{
+      font: normal normal normal 10px/1 FontAwesome;
+      margin: 0 8px;
+      font-size: 14px;
+      color: #888;
+      position: absolute;
+      top: 40%;
+      right: 20px;
+    }
+  }
+  .mypage__nav-head{
+    margin: 40px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
