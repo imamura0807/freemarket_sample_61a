@@ -1,0 +1,183 @@
+.header-2{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+
+    &__global{
+      width: 1020px;
+      margin: 0 auto;
+      padding: 8px 0 0;
+
+    
+      .global__row-1{
+        display: flex;
+        text-align: justify;
+        justify-content: space-between;
+
+        .row-1__right{
+          text-align: center;
+          align-items: center;
+          display: flex;
+          height: 40px;
+          margin-right: 45px;
+          
+          .home{
+            color: inherit;
+            text-decoration: none;
+    
+              .home-btn{
+                background: url("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg");
+                height: 40px;
+                width: 143px;
+              }
+          }
+        }
+        .row-1__left{
+          position: relative;
+          width: 100%;
+        
+
+          .kennsaku{
+            background-color: rgb(245, 245, 245);
+            font-size: 16px;
+            height: 40px;
+            line-height: 1.4em;
+            position: relative;
+            width: 100%;
+            appearance: none;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-image: initial;
+            border-radius: 4px;
+            outline: none;
+            padding: 0px 50px 0px 10px;
+            transition: all 0.3s ease-out 0s;
+            
+          }
+            .kennsaku__right{
+              width: 40px;
+              text-align: center;
+            }
+            .serch__btn{
+              background-color: transparent;
+              cursor: pointer;
+              height: 40px;
+              position: absolute;
+              right: 0px;
+              top: 7px;
+              width: 40px;
+              -webkit-appearance: none;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              border-radius: 0px 4px 4px 0px;
+              padding: 0px;
+            }
+            .fa-search{
+              font: normal normal normal 14px/1 FontAwesome;
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(34, 34, 34);
+              height: 14px;
+              margin-top: 2px;
+              width: 14px;
+            }
+          
+          
+        }
+      }
+    
+      .global__row-2{
+        display: flex;
+        -webkit-box-pack: justify;
+        // ボックス内の子要素の横方向の配置を指定する   余ったスペースは各子の間に均等に分割
+        justify-content: space-between;
+        // 各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる  
+        margin-top: 8px; 
+        
+        
+        .row-2__right{
+          display: flex;
+          margin-left: -3px;
+
+          .right__box{
+            cursor: pointer;
+            height: 44px;
+            position: relative;
+            z-index: 3;
+            padding: 0px 10px;
+            
+
+            .list{
+              text-decoration: none ;
+              display: block;
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              color: black;
+            }  
+            .fas{
+              font: normal normal normal 14px/1 FontAwesome;
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;  
+              
+              }
+          }
+        }
+        .row-2__left{
+          display: flex;
+          position: relative;
+          
+          .left__iine{
+            padding-left: 0px;
+            
+          }
+          .left__osirase{
+            padding: 0px 14px;
+            
+
+          }
+          .left__yarukotorisuto{
+            padding: 0px 14px;
+
+          }
+          .left__maipe-ji{
+            padding: 0px 14px;
+
+          }
+          .icon{
+            text-decoration: none ;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+            color: black;
+          }
+          .fal{
+            font: normal normal normal 14px/1 FontAwesome;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            color: rgb(204, 204, 204);
+            margin-right: 10px;
+          }
+          .fas{
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 35px;
+            color: rgb(0, 149, 238);
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+}
