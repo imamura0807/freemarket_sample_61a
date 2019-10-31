@@ -1,0 +1,25 @@
+.single-inner{
+  padding: 64px;
+  background: white;
+  .single-content{
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .btn-default{
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+  .btn-red{
+    color: rgb(255, 255, 255);
+    background: rgb(234, 53, 45);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(234, 53, 45);
+    border-image: initial;
+  }
+}

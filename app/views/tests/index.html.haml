@@ -1,0 +1,14 @@
+= render partial: "products/header"
+= render partial: "users/home-1"
+%main.container-1
+  .side 
+    = render partial: "users/side"
+  .contents
+    %form.single-inner{action: "", method: "POST", novalidate: ""}
+      .single-content
+      %button.btn-default.btn-red{type: "submit"} ログアウト
+      %input{name: "", type: "hidden", value: ""}/
+
+= render partial: "users/banner"
+= render partial: "users/footer"
+= render partial: "products/exhibit-btn.html"
