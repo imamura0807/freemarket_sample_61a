@@ -1,0 +1,338 @@
+.logo-3{
+  height: 50px;
+  width: auto;
+}
+
+.link-3{
+  text-decoration: none;
+}
+
+.necessary{
+      background-color:#ea352d;
+      font-weight: bold;
+      width: 25px;
+      margin-left: 8px;
+      padding: 3px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+}
+
+.question {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button{
+  margin-left: 40px;
+  height: 50px;
+  width: 620px;
+  font-size: 14px;
+  background-color: #ea352d;
+  color: #fff;
+}
+
+.return{
+  display: block;
+  background-color: #888;
+  color: #fff;
+  text-align: center;
+  margin: 24px 170.5px 0;
+  padding: 13px 0;
+  text-decoration: none;
+}
+
+.select__box {
+  position: relative;
+  select {
+  margin-top: 5px;
+  margin-bottom: 40px;
+  height: 45px;
+  width: 400px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: inline-block;
+  -webkit-appearance: none;
+  }
+  i {
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    color: #888;
+    font-size: 30px;
+  }
+}
+
+.input__text3{
+  right: 40px;
+  top: 40px;
+  position: absolute;
+  input {
+    text-align: right;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    height: 50px;
+    width: 160px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: inline-block;
+    -webkit-appearance: none;
+  }
+}
+
+.container-3 {
+  height: 2370px;
+  background-color: #f5f5f5;
+  &__header{
+    height: 125px;
+    line-height: 175px;
+    &__image{
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  &__main{
+    height: 2020px;
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+// 商品情報
+    &__info{
+      height: 100px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 100px;
+      font-size: 22px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+// 画像投稿
+    &__image{
+      height: 300px;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 40px 0 40px 40px;
+      &__top{
+        font-weight: bold;
+      }
+      &__middle{
+        font-size: 13px;
+      }
+      &__bottom{
+        font-size: 14px;
+        margin: 20px 0;
+        height: 162px;
+        width: 620px;
+        border: 1px dashed #cfcecf;
+        background-color: #eee;
+        text-align: center;
+        &__box{
+          margin-top: 60px;
+        }
+      }
+    }
+// 商品名・商品説明
+    &__product{
+      height: 350px;
+      width: 100%;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 40px 40px 40px 40px;
+      &__name{
+        &__top{
+          position: relative;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        &__bottom input{
+          height: 45px;
+          width: 100%;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 5px;
+          font-size: 15px;
+          border: 1px solid #ccc;
+        }
+      }
+      &__explain{
+        margin-top: 40px;
+        &__top{
+          position: relative;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        &__bottom textarea{
+          height: 130px;
+          width: 100%;
+          margin: 8px 0 0;
+          padding: 10px;
+          font-size: 15px;
+          border: 1px solid #ccc;
+        }
+      }
+    }
+// 商品詳細
+    &__detail{
+      height: 260px;
+      width: 100%;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 40px 0 40px 40px;
+      &__box1{
+        float: left;
+        color: #888;
+        font-size: 14px;
+        height: 200px;
+        width: 220px;
+        font-weight: bold;
+      }
+      &__box2{
+        float: left;
+        position: relative;
+        &__top1{
+          font-weight: bold;
+          font-size: 13px;
+        }
+        &__top2{
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+    }
+    // 配送について
+    &__send{
+      height: 370px;
+      width: 100%;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 40px 0 40px 40px;
+      &__box1{
+        float: left;
+        color: #888;
+        font-size: 14px;
+        height: 200px;
+        width: 220px;
+        font-weight: bold;
+      }
+      &__box2{
+        float: left;
+        position: relative;
+        &__top1{
+          font-weight: bold;
+          font-size: 13px;
+        }
+        &__top2{
+          font-weight: bold;
+          font-size: 14px;
+        }
+        &__top3{
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+    }
+    // 販売価格
+    &__price{
+      height: 300px;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 40px 0 40px 40px;
+      position: relative;
+      &__box1{
+        float: left;
+        color: #888;
+        font-size: 12px;
+        height: 200px;
+        width: 220px;
+        font-weight: bold;
+      }
+      &__box2{
+      float: left;
+      height: 220px;
+      width: 400px;
+       &__top1{
+         height: 70px;
+         width: 400px;
+         border-bottom: 1px solid #ccc;
+         padding-top: 20px;
+         &__left{
+          font-weight: bold;
+          font-size: 14px;
+         }
+         &__yen{
+           position: absolute;
+           right: 210px;
+           top: 60px;
+           font-size: 11px;
+         }
+       }
+       &__top2{
+         height: 60px;
+         width: 400px;
+         border-bottom: 1px solid #ccc;
+         line-height: 60px;
+         vertical-align: middle;
+         font-size: 14px;
+       }
+       &__top3{
+        height: 60px;
+        width: 400px; 
+        line-height: 60px;
+        vertical-align: middle;
+        font-weight: bold;
+       }
+      }
+    }
+    &__check{
+      height: 100%;
+      width: 100%;
+      &__text{
+        font-size: 14px;
+        padding: 40px 40px 40px 40px;
+        
+        
+      }
+
+    }
+  }
+
+  // フッター
+  &__footer {
+    background-color: #f5f5f5;
+    &__box {
+      width: 450px;
+      margin: 0 auto;
+      padding: 40px 0;
+      &__link {
+        display: flex;
+        font-size: 12px;
+        &__text {
+          color: black;
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          padding-left: 28px;
+        }
+      }
+      &__logo{
+        &__image {
+          height: 100px;
+          width: 85px;
+          margin: 0 auto;
+          padding-top: 40px;
+        &__text {
+          width: 120px;
+          font-size: 11px;
+        }
+       }
+      }
+    }
+  }
+}
