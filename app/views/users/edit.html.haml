@@ -1,0 +1,20 @@
+= render partial: "products/header"
+= render partial: "home-1"
+%main.container-1__chapter
+  .side 
+    = render partial: "side"
+  .contents
+    %section.chapter
+      %h2.chapter__head プロフィール
+      %form{action: "", method: "POST"}
+      .setting__profile-icon
+        %figure
+        = image_tag 'face.png',height:'60',width:'60'
+        %input.input-default{name: "nickname", placeholder: "例)AYA", type: "text", value: ""}/
+      .setting__profile-content
+        %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。"}
+        %button.btn-default.btn-red{type: "submit"} 変更する
+
+= render partial: "banner"
+= render partial: "footer"
+= render partial: "products/exhibit-btn.html"
