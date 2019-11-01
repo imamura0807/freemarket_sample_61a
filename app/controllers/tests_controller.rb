@@ -3,5 +3,9 @@ class TestsController < ApplicationController
   end
 
   def top
-  end 
+  end
+  
+  def login
+  end
+  
 end
