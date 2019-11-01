@@ -1,0 +1,17 @@
+.sign-up-top__container-1
+  %header.header
+    =link_to '#' do
+      = image_tag 'mercari-logo', height:'49',width:'185'
+  %main.main-top
+    %section.container
+      %h2.registration 新規会員登録
+      .registration-form
+        .content
+          = link_to 'https://www.mercari.com/jp/signup/registration/' , class:'icon' do
+            = image_tag 'red-mail', height:'50',width:'343'
+          = link_to '#',class:'icon' do
+            = image_tag 'facebook', height:'50',width:'343'
+          = link_to '#', class:'icon' do
+            = image_tag 'google1', height:'50',width:'343'
+  %footer.footer
+    = image_tag 'footer-mercari', height: '150', width: '387'

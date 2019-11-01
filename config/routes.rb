@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products, only: [:new]
   resources :users, only: [:destroy, :edit, :show]
   resources :tests, only: [:index]
+  get  'sign-up' => 'tests#top'
 end
