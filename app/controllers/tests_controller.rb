@@ -8,4 +8,6 @@ class TestsController < ApplicationController
   def login
   end
   
+  def step1
+  end
 end
