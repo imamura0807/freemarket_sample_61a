@@ -82,3 +82,4 @@ gem 'devise'
 # products コントローラーを作成する際に追記
 gem 'airbrussh','1.3.4' 
 gem 'haml-rails'
+gem 'active_hash'
