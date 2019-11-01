@@ -1,0 +1,130 @@
+= render 'header'
+.show-box-3
+  .show-box-3__main
+    .show-box-3__main__first
+      %h2.show-box-3__main__first__name
+        商品名
+        .show-box-3__main__first__box
+          .show-box-3__main__first__box__top
+            .show-box-3__main__first__box__top__photo
+              .show-box-3__main__first__box__top__photo__box1
+              .show-box-3__main__first__box__top__photo__box2
+            %table.show-box-3__main__first__box__top__table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td 
+                    ユーザー名
+                    .show-box-3__main__first__box__top__table__icons
+                      .icon1
+                        = fa_icon "smile-o"
+                        %span 0
+                      .icon2
+                        = fa_icon "meh-o"
+                        %span 0
+                      .icon3
+                        = fa_icon "frown-o"
+                        %span 0
+                %tr
+                  %th カテゴリー
+                  %td 
+                    .bland-3
+                      ブランド名
+                    .janle-3
+                      ジャンル１
+                    .janle-3
+                      ジャンル2
+                %tr
+                  %th ブランド
+                  %td ***
+                %tr
+                  %th 商品のサイズ
+                  %td ***
+                %tr
+                  %th 商品の状態
+                  %td ***
+                %tr
+                  %th 配送料の負担
+                  %td ***
+                %tr
+                  %th 配送の方法
+                  %td ***
+                %tr
+                  %th 配送元の地域
+                  %td ***
+                %tr
+                  %th 発送日の目安
+                  %td ***
+          .show-box-3__main__first__box__price
+            .show-box-3__main__first__box__price__left
+              ￥20,000
+            .show-box-3__main__first__box__price__middle
+              (税込)
+            .show-box-3__main__first__box__price__right
+              送料込み
+          .show-box-3__main__first__box__check
+            購入画面に進む
+          -# .show-box-3__main__box__app
+          -#   この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+          %h2.show-box-3__main__first__box__comment
+            ああああああああああああああああああああ
+          .show-box-3__main__first__box__bottom
+            .show-box-3__main__first__box__bottom__like
+              = fa_icon "heart"
+              %span.fade-in-down いいね!
+              %span.fade-in-down 0
+            .show-box-3__main__first__box__bottom__report
+              = fa_icon "flag"
+              %span.fade-in-down 不適切な商品の報告
+            .show-box-3__main__first__box__bottom__key
+              = fa_icon "lock"
+              あんしん・あんぜんへの取り組み
+    .show-box-3__main__comment
+      = form_with do |f|
+        %h2.show-box-3__main__comment__top
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        =f.text_area :*, class:"show-box-3__main__comment__middle"
+        %h2.show-box-3__main__comment__bottom
+          コメントする
+    .show-box-3__main__othor
+      .show-box-3__main__othor__back
+        = link_to "#", class:"show-box-3__main__othor__back__link" do
+          %i.fa.fa-chevron-left
+          %span back
+      .show-box-3__main__othor__next
+        = link_to "#", class:"show-box-3__main__othor__next__link" do
+          %span next
+          %i.fa.fa-chevron-right
+    .show-box-3__main__sns
+      .show-box-3__main__sns__box
+        = link_to "#", class:"show-box-3__main__sns__box__facebook" do
+          %i.fa.fa-facebook-square.fa-3x
+        = link_to "#", class:"show-box-3__main__sns__box__twetter" do
+          %i.fa.fa-twitter-square.fa-3x
+        = link_to "#", class:"show-box-3__main__sns__box__pinterest" do
+          %i.fa.fa-pinterest-square.fa-3x
+    .show-box-3__main__user
+      = link_to "◯◯さんのその他の出品", "#", class:"show-box-3__main__user__name"
+    .show-box-3__main__box
+      .show-box-3__main__box__users
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+    .show-box-3__main__user
+      = link_to "◯◯ その他の出品", "#", class:"show-box-3__main__user__name"
+    .show-box-3__main__box
+      .show-box-3__main__box__users
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+        = render partial: 'render_product'
+
+
+
+= render partial: "users/banner"
+= render partial: "users/footer"
