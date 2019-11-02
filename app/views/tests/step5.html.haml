@@ -1,0 +1,21 @@
+.step1-to-step5__container-1
+  %header.step1-to-step5__header
+    =link_to '#' do
+      = image_tag 'mercari-logo', height:'49',width:'185'
+  %main.step1-to-step5__main
+    %section.container
+      %h2.head.registration 会員登録完了
+      %form.inner{action: "", method: "POST", novalidate: "novalidate"} 
+        %input{name: "", type: "hidden", value: ""}/ 
+        .single-content
+          .form-group.text-center
+            %p.complete
+              ありがとうございます。
+              %br
+                会員登録が完了しました。
+          .form-group
+            %button.btn-default.btn-red{type: "submit"} メルカリを始める
+      .complete-header
+        = image_tag 'complete.png', width:'700'
+  %footer.step1-to-step5__footer
+    = image_tag 'footer-mercari', height: '150', width: '387'

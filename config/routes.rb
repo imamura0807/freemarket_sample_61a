@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get  'step1' => 'tests#step1'
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
+  get  'step2' => 'tests#step2'
+  get  'step3' => 'tests#step3'
+  get  'step5' => 'tests#step5'
+
 end
