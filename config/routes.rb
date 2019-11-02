@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:destroy, :edit, :show]
   resources :tests, only: [:index]
   get  'sign-up' => 'tests#top'
-  get   'log-in' => 'tests#login'
+  get  'log-in' => 'tests#login'
+  get  'step1' => 'tests#step1'
 end
