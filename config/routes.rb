@@ -13,3 +13,4 @@ Rails.application.routes.draw do
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
 end
+  # get  'user-confirm'　=> 'users#new'
