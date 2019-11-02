@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'purchases/new'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
@@ -8,4 +9,6 @@ Rails.application.routes.draw do
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
   get  'step1' => 'tests#step1'
+  # 商品購入確認画面 仮のルート
+  resources :purchases, only: [:new]
 end
