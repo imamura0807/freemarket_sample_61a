@@ -1,0 +1,56 @@
+= render 'products/products-header'
+.purchases-3
+  .purchases-3__box
+    %h2.purchases-3__box__header
+      購入内容の確認
+    .purchases-3__box__main
+      .purchases-3__box__main__inner
+        .purchases-3__box__main__inner__box
+          .purchases-3__box__main__inner__box__image
+          .purchases-3__box__main__inner__box__name
+            商品名
+        .purchases-3__box__main__inner__price
+          .purchases-3__box__main__inner__price__left
+            ¥ 20,000
+          .purchases-3__box__main__inner__price__right
+            送料込み
+        .purchases-3__box__main__inner__point
+          ポイントはありません
+        .purchases-3__box__main__inner__price2
+          .purchases-3__box__main__inner__price2__left
+            支払い金額
+          .purchases-3__box__main__inner__price2__right
+            ¥ 20,000
+        .purchases-3__box__main__inner__submit
+          購入する
+    .purchases-3__box__send
+      .purchases-3__box__send__inner
+        %h2.purchases-3__box__send__inner__head
+          配送先
+        .purchases-3__box__send__inner__text
+          郵便番号
+          %br
+          住所
+          %br
+          名前
+        .purchases-3__box__send__inner__link
+          = link_to '', class: "purchases-3__angel__link" do
+            %span 変更する
+            %i.fa.fa-chevron-right
+    .purchases-3__box__pay
+      .purchases-3__box__send__inner
+        %h2.purchases-3__box__send__inner__head
+          支払い方法
+        .purchases-3__box__send__inner__text
+          カード番号
+          %br
+          日付
+          %br
+          .jcb-icon
+            
+        .purchases-3__box__send__inner__link
+          = link_to '', class: "purchases-3__angel__link" do
+            %span 変更する
+            %i.fa.fa-chevron-right
+  
+= render 'products/products-footer'
