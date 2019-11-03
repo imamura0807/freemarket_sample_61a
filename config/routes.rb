@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :purchases, only: [:new]
   get  'step2' => 'tests#step2'
   get  'step3' => 'tests#step3'
+  get  'step4' => 'tests#step4'
   get  'step5' => 'tests#step5'
 
 end

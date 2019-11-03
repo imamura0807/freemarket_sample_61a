@@ -17,6 +17,9 @@ class TestsController < ApplicationController
   def step3
   end
 
+  def step4
+  end
+
   def step5
   end
 end
