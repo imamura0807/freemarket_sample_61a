@@ -36,8 +36,15 @@
               border-radius: 2px;
               color: #fff;
               font-size: 12px;
-              vertical-align: top;
           }
+          .form-option {
+            background:#D3D3D3;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+        }
           .input-default{
             width: 100%;
             margin: 8px 0 0;
@@ -87,6 +94,10 @@
             text-decoration: none;
             color: #0099e8;
           }
+          .complete{
+            font-size: 20px;
+            
+          }
         .btn-default{
           display: block;
           width: 100%;
@@ -101,6 +112,9 @@
           color: #fff;
         }
       }
+    }
+    .complete-header{
+      background:#f5f5f5; 
     }
   }
 }

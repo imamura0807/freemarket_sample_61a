@@ -1,0 +1,25 @@
+.step1-to-step5__container-1
+  %header.step1-to-step5__header
+    =link_to '#' do
+      = image_tag 'mercari-logo', height:'49',width:'185'
+  %main.step1-to-step5__main
+    %section.container
+      %h2.head.registration 電話番号の確認
+      %form.inner{action: "", method: "POST", novalidate: "novalidate"} 
+        %input{name: "", type: "hidden", value: ""}/ 
+        .single-content
+          .form-group
+            %label{for: "number"} 携帯電話の番号
+            %input.input-default{name: "number", placeholder: "携帯電話の番号を入力", type: "text", value: ""}/
+            %p.single-text
+              本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
+          .form-group
+            %button.btn-default.btn-red{type: "submit"} 次へ進む
+            %p.single-text
+              電話番号確認は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .form-group.text-right
+            %p
+              = link_to '/jp/help_center/article/423/', target: "_blank" , class: 'link' do
+                本人情報の登録について>
+  %footer.step1-to-step5__footer
+    = image_tag 'footer-mercari', height: '150', width: '387'
