@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   resources :tests, only: [:index]
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
-  get  'step1' => 'tests#step1'
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
-  get  'step2' => 'tests#step2'
-  get  'step3' => 'tests#step3'
-  get  'step4' => 'tests#step4'
-  get  'step5' => 'tests#step5'
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4' # ここで、入力の全てが終了する
+      get 'step5' # 登録完了後のページ
+    end
+  end
 
 end
