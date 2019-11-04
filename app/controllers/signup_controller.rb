@@ -1,16 +1,16 @@
 class SignupController < ApplicationController
-  def step1
+  def info
   end
 
-  def step2
+  def authentication
   end
 
-  def step3
+  def address
   end
 
-  def step4
+  def payment_way
   end
 
-  def step5
+  def done
   end
 end
