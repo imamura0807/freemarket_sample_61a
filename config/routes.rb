@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :products, only: [:new, :show]
-  resources :users, only: [:create, :destroy, :edit, :show,]
+  resources :users, only: [:create, :destroy, :edit, :show, :new]
   resources :tests, only: [:index]
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
