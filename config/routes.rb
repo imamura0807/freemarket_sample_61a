@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
 
+
   resources :products, only: [:new, :show]
   resources :users, only: [:create, :destroy, :edit, :show, :new]
   resources :tests, only: [:index]
@@ -11,10 +12,8 @@ Rails.application.routes.draw do
   get  'log-in' => 'tests#login'
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
-
-end
+  get  'sign-up' => 'tests#top'
   # get  'user-confirm'　=> 'users#new'
-
   resources :signup do
     collection do
       get 'info'
