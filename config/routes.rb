@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :show, :create]
   resources :users, only: [:destroy, :edit, :show]
   resources :tests, only: [:index]
+  resources :cards, only: [:new]
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
   # 商品購入確認画面 仮のルート
