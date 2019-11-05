@@ -21,7 +21,36 @@
         margin-bottom: 16px;
         text-align: center;
         font-size: 28px;
+        margin: 0px 0px 16px 0px;
       }
+      &__box{
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        
+      }
+        &__box-1{
+          display: block;
+          text-align: center;
+          width: 100%;
+          margin: -10px 0px 0px -10px;
+       
+      }
+          &__box-2{
+            margin: 10px 0px 0px 10px;
+            display: inline-block;
+          }
+            .category-link{
+              background-color: rgb(239, 239, 239);
+              cursor: pointer;
+              display: inline-block;
+              font-size: 14px;
+              font-weight: 600;
+              border-radius: 15px;
+              padding: 8px 16px;
+              color: black;
+              text-decoration: none;;
+            }
     }
   }
   .item__box{
@@ -58,12 +87,90 @@
           color: rgb(0, 149, 238);  
         }
         
-      
       .itirann{
         margin: -10px;
         display: flex;
         flex-wrap: wrap;
         list-style: none;
+        .itirann-imag{
+          width: 20%;
+          padding: 10px;
+          .itirann-styl{
+            visibility: visible;
+            transition: all 05s ease 0s;
+            opacity: 1;
+            .style_card{
+              width: 100%;
+              -webkit-box-align: center;
+              display: flex;
+              align-items: center;
+              flex-direction: column-reverse;
+              background-color: #fff;
+              
+              .style-card__1{
+                box-sizing: border-box;
+                color: #222;
+                font-size: 14px;
+                height: 64px;
+                line-height: 1.4em;
+                padding: 0 12px;
+                white-space: normal;
+                word-break: break-word;
+                display: flex;
+                width: 100%;
+                align-items: center;
+              }
+              .style-card__text{
+                display: inline-block;
+                height: 2.8em;
+                overflow: hidden;
+                position: relative;
+              }
+                .style-card__text::after{
+                  content: '顔顔かお顔顔買お顔かお顔顔買お顔顔買お顔顔買お顔顔買お顔顔顔顔かオアコア';
+                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                  bottom: 0;
+                  height: 50%;
+                  right: 0;
+                  width: 50%;
+                  // position: absolute;
+                  
+                }
+              
+              
+              
+              .style_thumbnail__N_xAi{
+                position: relative;
+                width: 100%;
+                .label{
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                  color: #fff;
+                  display: inline-flex;
+                  font-size: 17px;
+                  height: 28px;
+                  letter-spacing: .02em;
+                  margin: 0;
+                  padding: 0 12px;
+                  position: absolute;
+                  z-index: 2;
+                }
+                .image{
+                  bottom: 0;
+                  // position: absolute;
+                  top: 0;
+                  height: 100%;
+                  object-fit: cover;
+                  vertical-align: top;
+                  width: 100%;
+                  z-index: 1;
+                }
+              }
+            }
+          }
+        }
       }
   } 
 }

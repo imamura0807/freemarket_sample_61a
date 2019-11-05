@@ -6,6 +6,20 @@
     .category
       .category__list
         一覧表示
+      .category__box
+        %ul.category__box-1
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              レディース
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              メンズ
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              家電・スマホ・カメラ
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              おもちゃ・ホビー・グッズ
     .item__box
       .box__list
         .name__box
@@ -13,9 +27,10 @@
           = link_to '#' , class: 'mottomiru' do
             もっと見る
             %i.fas.fa-chevron-right
-              
-        .list__itirann
-          %ul.itirann
+        = render partial: "itirann"
+        = render partial: "itirann"
+
+
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
 = render partial: "users/footer"
