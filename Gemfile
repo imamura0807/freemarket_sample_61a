@@ -66,6 +66,9 @@ group :production do
 end
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -85,6 +88,8 @@ gem 'haml-rails'
 gem 'active_hash'
 gem 'ancestry'
 gem 'enum_help'
+gem 'active_hash'
 gem 'dropzonejs-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+
