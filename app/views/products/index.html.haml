@@ -6,6 +6,20 @@
     .category
       .category__list
         一覧表示
+      .category__box
+        %ul.category__box-1
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              レディース
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              メンズ
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              家電・スマホ・カメラ
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              おもちゃ・ホビー・グッズ
     .item__box
       .box__list
         .name__box
@@ -13,28 +27,9 @@
           = link_to '#' , class: 'mottomiru' do
             もっと見る
             %i.fas.fa-chevron-right
-              
-        .list__itirann
-          %ul.itirann
-            %li.itirann-imag
-              %div.itirann-styl   
-                = link_to '#' , class: 'image' do 
-                  %figure.style_card
-                    %figcaption.style-card__1
-                      %span.style-card__text 
-                    .style_thumbnail__N_xAi
-                      %span.label{"aria-label" => "Price"} ¥2,000
-                      = image_tag "face.png", class:"image"
-       
-            %li.itirann-imag
-              %div.itirann-styl   
-                = link_to '#' , class: 'image' do 
-                  %figure.style_card
-                    %figcaption.style-card__1
-                      %span.style-card__text 
-                    .style_thumbnail__N_xAi
-                      %span.label{"aria-label" => "Price"} ¥2,000
-                      = image_tag "face.png", class:"image"
+        = render partial: "itirann"
+        = render partial: "itirann"
+
 
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
