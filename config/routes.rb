@@ -5,9 +5,20 @@ Rails.application.routes.draw do
   root 'products#index'
 
 
+
   resources :products, only: [:new, :show]
   resources :users, only: [:create, :destroy, :edit, :show, :new]
+  resources :products, only: [:new, :show, :create] do
+      collection do
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+      end
+  end
+
+  resources :users, only: [:destroy, :edit, :show]
+
   resources :tests, only: [:index]
+  resources :cards, only: [:new]
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
   # 商品購入確認画面 仮のルート
