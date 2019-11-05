@@ -11,7 +11,7 @@
     .contents-inner{
       padding: 64px;
     
-      .contents-inner__text{
+      &__text{
         margin: 8px 0 0;
         line-height: 1.5;
         font-size: 14px;
@@ -116,7 +116,6 @@
         
         .select-default{
           width: 176px;
-          // padding: 0 10px;
           z-index: 2;
           height: 48px;
           border: 1px solid #ccc;
