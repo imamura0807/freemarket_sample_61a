@@ -31,15 +31,15 @@
             %span.form-require 必須
             .birthday-select-wrap
               .select-wrap
-              -# = f.select :year, User.years.keys,{prompt: '---'}
+              = f.select :yaer, User.yaers.keys,{prompt: '---'}, class: "select-default"
               年
             .birthday-select-wrap
               .select-wrap.select-wrap__month
-              = f.select :prefecture, Address.prefectures.keys,{prompt: '---'}
+              = f.select :moon, User.moons.keys,{prompt: '---'}, class: "select-default"
               月
             .birthday-select-wrap
               .select-wrap.select-wrap__day
-              = f.select :prefecture, Address.prefectures.keys,{prompt: '---'}
+              = f.select :day, User.days.keys,{prompt: '---'}, class: "select-default"
               日
               %p.form-info-text
                 ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
@@ -52,9 +52,7 @@
               %label.form-name{:for => "prefecture"} 都道府県
               %span.form-arbitrary 任意
               .select-wrap
-                = f.select :prefecture, Address.prefectures.keys,{prompt: '---'}
-                -# = f.select :prefecture, Address.prefectures.keys,{prompt: '---'}, {}, { class: "select-prefecture" }
-                -# %i.fa.fa-angle-down
+                = f.select :prefecture, Address.prefectures.keys,{prompt: '---'}, class: "select-prefecture"
             .form-group
               %label.form-name{:for => "city"} 市区町村
               %span.form-arbitrary 任意
