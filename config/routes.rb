@@ -12,9 +12,19 @@ Rails.application.routes.draw do
 
   resources :users, only: [:destroy, :edit, :show]
   resources :tests, only: [:index]
+  resources :cards, only: [:new]
   get  'sign-up' => 'tests#top'
   get  'log-in' => 'tests#login'
-  get  'step1' => 'tests#step1'
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
+  resources :signup do
+    collection do
+      get 'info'
+      get 'authentication'
+      get 'address'
+      get 'payment_way' # ここで、入力の全てが終了する
+      get 'done' # 登録完了後のページ
+    end
+  end
+
 end
