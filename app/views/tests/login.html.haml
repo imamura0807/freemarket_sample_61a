@@ -19,7 +19,7 @@
       .form-group
         %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/ 
       .form-group.robott
-        = image_tag 'robott', height:'81',width:'308'
+        = recaptcha_tags
       %button.login-submit.btn-default.btn-red{type: "submit"} ログイン
   %footer.footer
     = image_tag 'footer-mercari', height: '150', width: '387'

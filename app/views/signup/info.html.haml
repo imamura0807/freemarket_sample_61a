@@ -2,6 +2,28 @@
   %header.step1-to-step5__header
     =link_to '#' do
       = image_tag 'mercari-logo', height:'49',width:'185'
+    %nav.progress
+      %ul.progress-bar
+        %li.active#active
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.address#address
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.payment#payment
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
   %main.step1-to-step5__main
     %section.container
       %h2.head.registration 会員情報入力
@@ -62,8 +84,7 @@
         .single-content
           %input{name: "after_save_callback", type: "hidden", value: ""}/
           .form-group
-            .g-recaptcha.signup-recaptcha
-              = image_tag 'robott.png', height:'78', width:'304'
+            = recaptcha_tags
           .form-group
             %p.single-text.text-center
               「次へ進む」のボタンを押すことにより、
