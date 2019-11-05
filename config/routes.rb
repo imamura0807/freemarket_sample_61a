@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
-  resources :products, only: [:new, :show, :create]
+  resources :products, only: [:new, :show, :create] do
+      collection do
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+      end
+  end
+
   resources :users, only: [:destroy, :edit, :show]
   resources :tests, only: [:index]
   resources :cards, only: [:new]

@@ -85,5 +85,6 @@ gem 'haml-rails'
 gem 'active_hash'
 gem 'ancestry'
 gem 'enum_help'
+gem 'dropzonejs-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
