@@ -28,14 +28,12 @@
               .dropzone-preview2
                 #preview2
                 .dropzone-area2
-                  = image.label :image, class: "dropzone-box", for: "upload-image" do
-                    .input_area
+                  = image.label :image, class: "dropzone-box2", for: "upload-image" do
+                    .input_area2
                       = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
                     %p.text
                       ドラッグアンドドロップ
                       %br またはクリックしてファイルをアップロード
-                  
-                  
       .container-3__main__product
         .ontainer-3__main__product__name
           %h2.container-3__main__product__name__top
@@ -60,7 +58,7 @@
             %span.listing-default--require 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 %i.fa.fa-angle-down.listing-select-wrapper__box--arrow-down
           %h2.container-3__main__detail__box2__top2
             商品の状態
