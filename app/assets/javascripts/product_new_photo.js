@@ -1,8 +1,6 @@
 $(document).on('turbolinks:load', function(){
   var dropzone = $('.dropzone-area');
   var dropzone2 = $('.dropzone-area2');
-  var droppreview = $('.dropzone-preview');
-  var droppreview2 = $('.dropzone-preview2');
   var dropzone_box = $('.dropzone-box');
   var images = [];
   var inputs  =[];
@@ -32,65 +30,28 @@ $(document).on('turbolinks:load', function(){
             'width': `calc(100% - (135px * ${images.length - 5}))`
           })
         })
-      } else if(images.length >= 5 && images.length <=9){
-        droppreview.css({
+      } else if(images.length == 5) {
+        dropzone.css({
           'display': 'none'
         })
-        droppreview2.css({
+        dropzone2.css({
           'display': 'block'
         })
+      } else if(images.length >= 6 && images.length <=9){
         $.each(images, function(index, image) {
           image.attr('data-image', index);
           preview2.append(image);
-          droppreview2.css({
+          dropzone2.css({
             'width': `calc(100% - (135px * ${images.length - 5}))`
           })
         })
       } else {
-          droppreview2.css({
+          dropzone2.css({
             'display': 'none'
           })
           return;
         }
-      
-      // if(images.length == 10){
-      //   dropzone.css({
-      //     display: "none"
-      //   });
-      //   dropzone2.css({
-      //     'display': 'none'
-      //   })
-      //   return;
-      // }
-      // else if(images.length > 4 && images.length < 10){
-      //   dropzone.css({
-      //     'display': 'none'
-      //   })
-      //   dropzone2.css({
-      //     'display': 'block'
-      //   })
-      //   $.each(images, function(index, image) {
-      //     image.attr('data-image', index);
-      //     preview2.append(image);
-      //     dropzone2.css({
-      //       'width': `calc(100% - (135px * ${images.length - 5}))`
-      //     })
-      //   })
-      // else{
-      //   dropzone.css({
-      //     'display': 'block'
-      //   })
-      //   dropzone2.css({
-      //     'display': 'none'
-      //   })
-      //   $.each(images, function(index, image) {
-      //     image.attr('data-image', index);
-      //     preview.append(image);
-      //     dropzone.css({
-      //       'width': `calc(100% - (135px * ${images.length - 5}))`
-      //     })
-      //   })
-      // }
+
     var new_image = $(`<input multiple= "multiple" name="product_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
   });
