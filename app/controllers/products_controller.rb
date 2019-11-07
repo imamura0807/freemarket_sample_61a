@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
 
   def index
+    @products = Product.all.limit(10)
+    # binding.pry
+    @images = Image.all.limit(10)
+    # binding.pry
   end
 
   def new

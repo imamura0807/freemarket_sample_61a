@@ -1,54 +1,16 @@
 .list__itirann
   %ul.itirann
+    - @products.each do |product|
     %li.itirann-imag
       .itirann-styl   
         = link_to '#' , class: 'image' do 
           %figure.style_card
             %figcaption.style-card__1
-              %span.style-card__text 
+              = product.name
+              -# %span.style-card__text 
             .style_thumbnail__N_xAi
-              %span.label{"aria-label" => "Price"} ¥2,000
-              = image_tag "face.png", class:"image"
-
-
-    %li.itirann-imag
-      .itirann-styl   
-        = link_to '#' , class: 'image' do 
-          %figure.style_card
-            %figcaption.style-card__1
-              %span.style-card__text 
-            .style_thumbnail__N_xAi
-              %span.label{"aria-label" => "Price"} ¥2,000
-              = image_tag "face.png", class:"image"
-
-
-    %li.itirann-imag
-      .itirann-styl   
-        = link_to '#' , class: 'image' do 
-          %figure.style_card
-            %figcaption.style-card__1
-              %span.style-card__text 
-            .style_thumbnail__N_xAi
-              %span.label{"aria-label" => "Price"} ¥2,000
-              = image_tag "face.png", class:"image"
-
-
-    %li.itirann-imag
-      .itirann-styl   
-        = link_to '#' , class: 'image' do 
-          %figure.style_card
-            %figcaption.style-card__1
-              %span.style-card__text 
-            .style_thumbnail__N_xAi
-              %span.label{"aria-label" => "Price"} ¥2,000
-              = image_tag "face.png", class:"image"
-
-    %li.itirann-imag
-      .itirann-styl   
-        = link_to '#' , class: 'image' do 
-          %figure.style_card
-            %figcaption.style-card__1
-              %span.style-card__text 
-            .style_thumbnail__N_xAi
-              %span.label{"aria-label" => "Price"} ¥2,000
-              = image_tag "face.png", class:"image"
+              = product.price
+              -# %span.label{"aria-label" => "Price"} ¥2,000
+              - @images.each do |image|
+              = image.image
+              -# = image_tag "face.png", class:"image"
