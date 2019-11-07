@@ -37,6 +37,14 @@ $(document).on('turbolinks:load', function(){
         dropzone2.css({
           'display': 'block'
         })
+        $.each(images, function(index, image) {
+          image.attr('data-image', index);
+          preview2.append(image);
+          dropzone2.css({
+            'width': `calc(100% - (135px * ${images.length - 5}))`
+          })
+        })
+        
       } else if(images.length >= 6 && images.length <=9){
         $.each(images, function(index, image) {
           image.attr('data-image', index);

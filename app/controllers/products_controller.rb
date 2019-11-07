@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_action :set_item_form_collction_select, only: [:new, :create]
+  before_action :set_product_form_collction_select, only: [:new, :create]
+  before_action :set_product, only: [:show]
 
   def index
   end
@@ -16,6 +17,7 @@ class ProductsController < ApplicationController
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
+
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
@@ -25,6 +27,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @saler_products = Item.where(saler_id: @product.saler_id).limit(6).order('created_at DESC')
+    @same_category_products = Item.where(category_id: @product.category_id).limit(6).order('created_at DESC')
   end
 
   def create
@@ -41,12 +45,16 @@ class ProductsController < ApplicationController
 
   private
 
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
   def product_params
     params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id)
     # params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category).merge(user_id: current_user.id)
   end
 
-  def set_item_form_collction_select
+  def set_product_form_collction_select
     @category_parent_array = Category.where(ancestry: nil)
   end
 

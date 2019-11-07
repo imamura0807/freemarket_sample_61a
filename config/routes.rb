@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
 
-
-
-  resources :products, only: [:new, :show]
   resources :users, only: [:create, :destroy, :edit, :show, :new]
   resources :products, only: [:new, :show, :create] do
       collection do

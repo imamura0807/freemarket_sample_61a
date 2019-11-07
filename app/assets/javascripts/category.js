@@ -102,7 +102,7 @@ $(function(){
 $(function(){
   // サイズセレクトボックスのオプションを作成
   function appendSizeOption(size){
-    var html = `<option value="${size.size}">${size.size}</option>`;
+    var html = `<option value="${size.id}">${size.size}</option>`;
     return html;
   }
   // サイズ・ブランド入力欄の表示作成
@@ -113,7 +113,7 @@ $(function(){
                       <span class='listing-default--require'>必須</span>
                       <div class='listing-select-wrapper__added--size'>
                         <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="size" name="size_id>
+                          <select class="listing-select-wrapper__box--select" id="size" name="size_id">
                             <option value="---">---</option>
                             ${insertHTML}
                           <select>
