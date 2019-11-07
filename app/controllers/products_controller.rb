@@ -53,7 +53,8 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id).merge(user_id: current_user.id)
+    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id, :size)
+    # .merge(user_id: current_user.id)
   end
 
   def set_product_form_collction_select
