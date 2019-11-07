@@ -26,46 +26,35 @@
           .progress-status_bar
   %main.step1-to-step5__main
     %section.container
-      %h2.head.registration 住所入力
-      %form.inner{action: "", method: "POST", novalidate: "novalidate"} 
-        %input{name: "", type: "hidden", value: ""}/ 
-        .single-content
-          .form-group
-            %label{for: "name"} お名前
-            %span.form-require 必須
-            %input.input-default{name: "first-name", placeholder: "例)山田", type: "text", value: ""}/
-            %input.input-default{name: "last-name", placeholder: "例)太朗", type: "text", value: ""}/
-          .form-group
-            %label{for: "name-kana"} お名前カナ
-            %span.form-require 必須
-            %input.input-default{name: "first-name-kana", placeholder: "例)ヤマダ", type: "text", value: ""}/
-            %input.input-default{name: "last-name-kana", placeholder: "例)タロウ", type: "text", value: ""}/
-          .form-group
-            %label{for: "post_number"} 郵便番号
-            %span.form-require 必須
-            %input.input-default{name: "post_number", placeholder: "例）123-456", type: "text"}/
-          = form_with do |f|
+      = form_with(model: @user, url:payment_way_signup_index_path, method: :get, local: :true) do |f|
+        %h2.head.registration 住所入力
+        .inner
+          .single-content
             .form-group
-              %label{for: "prefectures"} 都道府県
+              = f.label :'郵便番号'
               %span.form-require 必須
-              = f.select :prefecture, User.prefectures.keys,{prompt: '---'}, class: "input-default"
+              = f.text_field :address_number, placeholder: "例）123-456", class:'input-default'
             .form-group
-              %label{for: "city"} 市区町村
+              = f.label :'都道府県'
               %span.form-require 必須
-              %input.input-default{name: "city", placeholder: "例）名古屋市中区", type: "text"}/
+              = f.select :address_prefecture, User.prefectures.keys,{prompt: '---'}, class:'input-default'
             .form-group
-              %label{for: "house_number"} 番地
+              = f.label :'市区町村'
               %span.form-require 必須
-              %input.input-default{name: "house_number", placeholder: "例）緑山1-1-1", type: "text"}/
+              = f.text_field  :address_mayor_town, placeholder: "例）名古屋市中区", class:'input-default'
             .form-group
-              %label{for: "building_name"} 建物名
+              = f.label :'番地'
+              %span.form-require 必須
+              = f.text_field :address_block, placeholder: "例）緑山1-1-1", class:'input-default'
+            .form-group
+              = f.label :'建物名'
               %span.form-option 任意
-              %input.input-default{name: "building_name", placeholder: "例）TECHビル", type: "text"}/
+              = f.text_field :address_building, placeholder: "例）TECHビル", class:'input-default' 
             .form-group
-              %label{for: "phone"} 電話
+              = f.label :'電話'
               %span.form-option 任意
-              %input.input-default{name: "phone", placeholder: "例）09011112222", type: "text"}/
+              = f.text_field :address_phone_number, placeholder: "例）09011112222", class:'input-default' 
             .form-group
-              %button.btn-default.btn-red{type: "submit"} 次へ進む
+              = f.button "次へ進む", class: "btn-default btn-red"
     %footer.step1-to-step5__footer
       = image_tag 'footer-mercari', height: '150', width: '387'
