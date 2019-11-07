@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
 
   def index
+    @products = Product.all.limit(10)
+    # binding.pry
+    @images = Image.all.limit(10)
+    # binding.pry
   end
 
   def new
