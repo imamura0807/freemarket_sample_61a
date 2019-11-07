@@ -27,12 +27,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @saler_products = Item.where(saler_id: @product.saler_id).limit(6).order('created_at DESC')
-    @same_category_products = Item.where(category_id: @product.category_id).limit(6).order('created_at DESC')
+    # @saler_products = Item.where(saler_id: @product.saler_id).limit(6).order('created_at DESC')
+    # @same_category_products = Item.where(category_id: @product.category_id).limit(6).order('created_at DESC')
   end
 
   def create
     @product = Product.new(product_params)
+    binding.pry
     if @product.save && new_image_params[:images][0] != ""
       new_image_params[:images].each do |image|
         @product.images.create(image: image, product_id: @product.id)
@@ -46,12 +47,13 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    # とりあえず　後に修正
+    @product = Product.find(1)
+    # (params[:id])
   end
 
   def product_params
-    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id)
-    # params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category).merge(user_id: current_user.id)
+    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id).merge(user_id: current_user.id)
   end
 
   def set_product_form_collction_select

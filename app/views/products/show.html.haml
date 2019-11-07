@@ -3,7 +3,7 @@
   .show-box-3__main
     .show-box-3__main__first
       %h2.show-box-3__main__first__name
-        商品名
+        = @product.name
         .show-box-3__main__first__box
           .show-box-3__main__first__box__top
             .show-box-3__main__first__box__top__photo
@@ -29,35 +29,39 @@
                   %th カテゴリー
                   %td 
                     .bland-3
-                      ブランド名
-                    .janle-3
-                      ジャンル１
+                      ジャンル1
                     .janle-3
                       ジャンル2
+                    .janle-3
+                      ジャンル3
                 %tr
                   %th ブランド
-                  %td ***
+                  %td ーーー
                 %tr
                   %th 商品のサイズ
-                  %td ***
+                  %td ーーー
                 %tr
                   %th 商品の状態
-                  %td ***
+                  %td 
+                    = @product.status
                 %tr
                   %th 配送料の負担
-                  %td ***
+                  %td 
+                    = @product.charge_burden
                 %tr
                   %th 配送の方法
-                  %td ***
+                  %td らくらくメルカリ便
                 %tr
                   %th 配送元の地域
-                  %td ***
+                  %td 
+                    = @product.prefecture
                 %tr
                   %th 発送日の目安
-                  %td ***
+                  %td 
+                    = @product.send_days
           .show-box-3__main__first__box__price
             .show-box-3__main__first__box__price__left
-              ￥20,000
+              = @product.price
             .show-box-3__main__first__box__price__middle
               (税込)
             .show-box-3__main__first__box__price__right
@@ -67,7 +71,7 @@
           -# .show-box-3__main__box__app
           -#   この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
           %h2.show-box-3__main__first__box__comment
-            ああああああああああああああああああああ
+            = @product.description
           .show-box-3__main__first__box__bottom
             .show-box-3__main__first__box__bottom__like
               = fa_icon "heart"
