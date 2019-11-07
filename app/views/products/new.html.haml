@@ -15,7 +15,7 @@
         %h2.container-3__main__image__middle
           最大10枚までアップロードできます
           = f.fields_for :product_images do |image|
-            .dropzone-container
+            .dropzone-container.clearfix
               .dropzone-preview
                 #preview
                 .dropzone-area
