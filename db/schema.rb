@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_034636) do
+ActiveRecord::Schema.define(version: 2019_11_06_092214) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "date", null: false
     t.string "code", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "card_number", null: false
+    t.integer "expire_month", null: false
+    t.integer "expire_year", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -99,21 +100,29 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name", null: false
     t.string "last_name_kana", null: false
-    t.date "birthday", null: false
-    t.string "phone_number", null: false
     t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "email", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.string "address_number", null: false
+    t.integer "address_prefecture", null: false
+    t.string "address_mayor_town", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_number"
+    t.text "introduce"
+    t.integer "phone_number", null: false
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
