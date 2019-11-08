@@ -82,9 +82,9 @@ ActiveRecord::Schema.define(version: 2019_11_07_052840) do
     t.datetime "updated_at", null: false
     t.integer "prefecture", null: false
     t.bigint "user_id"
-    t.bigint "category_id"
     t.bigint "brand_id"
     t.integer "purchased_at"
+    t.bigint "category_id"
     t.string "size"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"

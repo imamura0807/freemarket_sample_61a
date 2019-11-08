@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :users, only: [:create, :destroy, :edit, :show, :new]
-  resources :products, only: [:new, :show, :create] do
+  resources :products, only: [:index, :new, :show, :create] do
       collection do
         get 'get_category_children', defaults: { format: 'json' }
         get 'get_category_grandchildren', defaults: { format: 'json' }
