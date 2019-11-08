@@ -1,4 +1,6 @@
 .header-2
+  = link_to destroy_user_session_path, method: :delete do
+    ログアウト 
   .header-2__global
     .global__row-1
       .row-1__right
@@ -12,9 +14,6 @@
           .serch__btn
             %i.fas.fa-search
 
-            
-          
-
     .global__row-2
       .row-2__right
         .right__box
@@ -25,21 +24,29 @@
           = link_to '#', class: 'list' do
             %i.fas.fa-tag
             ブランドから探す
-
-      .row-2__left
-        .left__iine
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-heart
-            いいね!一覧
-        .left__osirase
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-bell
-            お知らせ
-        .left__yarukotorisuto
-          = link_to '#', class: 'icon'  do
-            %i.fal.fa-check
-            やることリスト
-        .left__maipe-ji
-          = link_to '#' , class: 'icon'  do
-            %i.fas.fa-user-circle
-            マイページ
+      - if user_signed_in? 
+        .row-2__left
+          .left__iine
+            = link_to '#', class: 'icon'  do
+              %i.fal.fa-heart
+              いいね!一覧
+          .left__osirase
+            = link_to '#', class: 'icon'  do
+              %i.fal.fa-bell
+              お知らせ
+          .left__yarukotorisuto
+            = link_to '#', class: 'icon'  do
+              %i.fal.fa-check
+              やることリスト
+          .left__maipe-ji
+            = link_to '#' , class: 'icon'  do
+              %i.fas.fa-user-circle
+              マイページ
+      - else
+        .row-1__sign-in-log
+          .new__registration
+            = link_to '/users/top', class: 'link-btn' do
+              新規会員登録
+          .top__login
+            = link_to new_user_session_path , class: 'link-btn' do
+              ログイン
