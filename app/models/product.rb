@@ -2,7 +2,6 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :images, dependent: :destroy
   belongs_to :brand
-  belongs_to :size
   belongs_to :category
   has_many :comments
   accepts_nested_attributes_for :images

@@ -93,3 +93,5 @@ gem 'dropzonejs-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
 gem 'gretel'
+gem 'payjp'
+

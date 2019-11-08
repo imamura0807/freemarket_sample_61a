@@ -39,6 +39,13 @@ $(document).on('turbolinks:load', function(){
         })
         $.each(images, function(index, image) {
           image.attr('data-image', index);
+          preview.append(image);
+          dropzone.css({
+            'width': `calc(100% - (135px * ${images.length - 5}))`
+          })
+        })
+        $.each(images, function(index, image) {
+          image.attr('data-image', index);
           preview2.append(image);
           dropzone2.css({
             'width': `calc(100% - (135px * ${images.length - 5}))`
