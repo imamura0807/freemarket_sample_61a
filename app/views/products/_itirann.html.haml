@@ -1,16 +1,19 @@
 .list__itirann
   %ul.itirann
     - @products.each do |product|
-    %li.itirann-imag
-      .itirann-styl   
-        = link_to '#' , class: 'image' do 
-          %figure.style_card
-            %figcaption.style-card__1
-              = product.name
-              -# %span.style-card__text 
-            .style_thumbnail__N_xAi
-              = product.price
-              -# %span.label{"aria-label" => "Price"} ¥2,000
-              - @images.each do |image|
-              = image.image
-              -# = image_tag "face.png", class:"image"
+      %li.itirann-imag
+        .itirann-styl   
+          = link_to '#' , class: 'image' do 
+            .style_card
+              .style-card__1
+                %span.style-card__text 
+                = product.name
+              .style_thumbnail__N_xAi
+                %span.label
+                  = product.price
+                  $
+              - @images.each do |i|
+                %span.image
+                  = image_tag i.image.url
+                  
+          
