@@ -14,7 +14,7 @@
         = image_tag 'google1', height:'50',width:'328'
     %form.input
     .login-form-inner
-      = form_with(model: @user, method: :get, local: :true) do |f|
+      = form_with(model: @user, url: new_user_session_path,  method: :get, local: :true) do |f|
         .form-group
           = f.email_field :email, placeholder: 'メールアドレス',class: 'login-input-text input-default'
         .form-group
