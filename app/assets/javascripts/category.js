@@ -113,9 +113,13 @@ $(function(){
                       <span class='listing-default--require'>必須</span>
                       <div class='listing-select-wrapper__added--size'>
                         <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="size" name="size_id">
+                          <select class="listing-select-wrapper__box--select" id="size" name="size">
                             <option value="---">---</option>
-                            ${insertHTML}
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
                           <select>
                           <i class='fa fa-angle-down listing-select-wrapper__box--arrow-down'></i>
                         </div>

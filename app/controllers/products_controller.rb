@@ -1,6 +1,4 @@
 class ProductsController < ApplicationController
-
-  before_action :set_product_form_collction_select, only: [:new, :create]
   before_action :set_product, only: [:show]
 
   def index
@@ -33,14 +31,13 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
-    if @product.save && new_image_params[:images][0] != ""
-      new_image_params[:images].each do |image|
-        @product.images.create(image: image, product_id: @product.id)
+    @category_parent_array = Category.name
+    respond_to do |format|
+    if @product.save
+        format.html{redirect_to root_path}
+      else
+        format.html{render action: 'new'}
       end
-      redirect_to root_path
-    else
-      render "new"
     end
   end
 
@@ -53,11 +50,8 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :category_id).merge(user_id: current_user.id)
-  end
-
-  def set_product_form_collction_select
-    @category_parent_array = Category.where(ancestry: nil)
+    params[:product].permit(:name, :description, :status, :charge_burden, :prefecture, :send_days, :price, :size, :category_id, :category_id2, :category_id3)
+    # .merge(user_id: current_user.id)
   end
 
   def new_image_params

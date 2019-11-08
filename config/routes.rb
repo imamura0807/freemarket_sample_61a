@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:new, :show, :create] do
+  resources :products, only: [:index, :new, :show, :create] do
       collection do
         get 'get_category_children', defaults: { format: 'json' }
         get 'get_category_grandchildren', defaults: { format: 'json' }
