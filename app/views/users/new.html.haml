@@ -1,4 +1,5 @@
 = render partial: "products/header"
+- breadcrumb :Personal
 = render partial: "home-1"
 %main.container-1
   .side 
@@ -31,11 +32,11 @@
             %span.form-require 必須
             .birthday-select-wrap
               .select-wrap
-              = f.select :yaer, User.yaers.keys,{prompt: '---'}, class: "select-default"
+              = f.select :yaer, User.years.keys,{prompt: '---'}, class: "select-default"
               年
             .birthday-select-wrap
               .select-wrap.select-wrap__month
-              = f.select :moon, User.moons.keys,{prompt: '---'}, class: "select-default"
+              = f.select :moon, User.months.keys,{prompt: '---'}, class: "select-default"
               月
             .birthday-select-wrap
               .select-wrap.select-wrap__day
