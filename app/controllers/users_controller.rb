@@ -18,6 +18,12 @@ class UsersController < ApplicationController
     
   end
 
+  def top
+  end
+
+  def login
+  end
+
   # private
 
   # def address_params
