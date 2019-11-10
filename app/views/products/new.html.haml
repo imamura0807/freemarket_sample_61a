@@ -3,7 +3,7 @@
     .container-3__header__image
       = link_to root_path do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", class:"logo-3"
-  = form_for @product do |f|
+  = form_with model: @product, local: true, html: {class: "sell__form"} do |f|
     .container-3__main
       %h2.container-3__main__info
         商品の情報を入力
@@ -14,14 +14,14 @@
             必須
         %h2.container-3__main__image__middle
           最大10枚までアップロードできます
-          = f.fields_for :product_images do |image|
+          = f.fields_for :images do |image|
             .dropzone-container
               .dropzone-preview
                 #preview
                 .dropzone-area
-                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                  = image.label :url, class: "dropzone-box", for: "upload-image" do
                     .input_area
-                      = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                      = image.file_field :url, multiple: true, name: 'images[url][]', id: 'upload-image', class: 'upload-image', 'data-image': 0
                     %p.text
                       ドラッグアンドドロップ
                       %br またはクリックしてファイルをアップロード
@@ -55,8 +55,8 @@
             = f.label 'カテゴリー', class: 'listing-default__label'
             %span.listing-default--require 必須
             .listing-select-wrapper
-              .listing-select-wrapper__box
-                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              .select__box
+                = f.select :category_id, @category_parent_array, {}, {class: 'select-default', id: 'parent_category'}
                 %i.fa.fa-angle-down.listing-select-wrapper__box--arrow-down
           %h2.container-3__main__detail__box2__top2
             商品の状態
@@ -130,7 +130,7 @@
             また、出品をもちまして
             = link_to "加盟店規約", "*", class:"link-3"
             に同意したことになります。
-        = f.submit "出品する", class: "button"
+        = f.submit '出品する', class: "button"
         =link_to 'もどる', root_path, class:"return"
       
   .container-3__footer
