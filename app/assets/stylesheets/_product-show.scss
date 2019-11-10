@@ -17,15 +17,20 @@
         &__top{
           display: flex;
           &__photo{
-            height: 412px;
+            height: 420px;
             width: 300px;
             background-color: #f5f5f5;
-            // &box1{
+            &__box1{
+              height: 300px;
+              width: 300px;
+        
 
-            // }
-            // &box2{
-
-            // }
+            }
+            &__box2{
+              height: 120px;
+              width: 300px;
+             
+            }
           }
           &__table{
             margin-left: 20px;
@@ -131,6 +136,9 @@
         height: 90px;
         margin-top: 10px;
         border: 1px solid #ccc;
+        padding: 10px;
+        background: #fff;
+        font-size: 16px;
 
       }
       &__bottom{
@@ -276,4 +284,10 @@ td{
   .icon3 {
     color: #6ab5d8;
   }
+}
+
+.sub_image {
+  display: inline;
+  margin: 0 -3.6px;
+  opacity: 0.5;
 }

@@ -8,7 +8,10 @@
           .show-box-3__main__first__box__top
             .show-box-3__main__first__box__top__photo
               .show-box-3__main__first__box__top__photo__box1
+                = image_tag "#{@images[0].url}",class: "main_image",id: "main", size: "300x300"
               .show-box-3__main__first__box__top__photo__box2
+                - @images.each do |image|
+                  = image_tag "#{image.url}",class: "sub_image", size: "60x60"
             %table.show-box-3__main__first__box__top__table
               %tbody
                 %tr
@@ -29,17 +32,26 @@
                   %th カテゴリー
                   %td 
                     .bland-3
-                      ジャンル1
+                      = link_to (), class: "link-4" do
+                        = @product.category.root.name
                     .janle-3
-                      ジャンル2
+                      = link_to (), class: "link-4" do
+                        >
+                        = @product.category.parent.name
                     .janle-3
-                      ジャンル3
+                      = link_to (), class: "link-4" do
+                        >
+                        = @product.category.name
                 %tr
                   %th ブランド
-                  %td ーーー
+                  %td 
+                    - if @product.brand.present?
+                      = @product.brand
                 %tr
                   %th 商品のサイズ
-                  %td ーーー
+                  %td 
+                    - if @product.size_type.present?
+                      = @product.size_type.size_type
                 %tr
                   %th 商品の状態
                   %td 
@@ -61,13 +73,14 @@
                     = @product.send_days
           .show-box-3__main__first__box__price
             .show-box-3__main__first__box__price__left
-              = @product.price
+              = "¥ #{number_with_delimiter(@product.price)}"
             .show-box-3__main__first__box__price__middle
               (税込)
             .show-box-3__main__first__box__price__right
               送料込み
           .show-box-3__main__first__box__check
-            購入画面に進む
+            = link_to (), class: "link-5" do
+              購入画面に進む
           -# .show-box-3__main__box__app
           -#   この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
           %h2.show-box-3__main__first__box__comment
@@ -88,8 +101,7 @@
         %h2.show-box-3__main__comment__top
           相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         =f.text_area :*, class:"show-box-3__main__comment__middle"
-        %h2.show-box-3__main__comment__bottom
-          コメントする
+        = f.submit "コメントする", class:"show-box-3__main__comment__bottom"
     .show-box-3__main__othor
       .show-box-3__main__othor__back
         = link_to "#", class:"show-box-3__main__othor__back__link" do

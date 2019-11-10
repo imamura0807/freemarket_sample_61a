@@ -31,6 +31,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @images = @product.images.order("id DESC")
     # @saler_products = Item.where(saler_id: @product.saler_id).limit(6).order('created_at DESC')
     # @same_category_products = Item.where(category_id: @product.category_id).limit(6).order('created_at DESC')
   end
