@@ -1,0 +1,30 @@
+= render partial: "products/header"
+= render partial: "users/home-1"
+
+%main.container-1
+  .side 
+    = render partial: "users/side"
+  .contents
+    .step1-to-step5__container-1
+      %main.step1-to-step5__main
+        %section.container
+          = form_with( url: cards_path(@card.id), method: :delete, local: :true) do |f|
+            %h2.head.registration 支払い方法
+            .inner
+              .single-content
+                .form-group
+                  = f.label :'登録クレジットカード情報'
+                  %br
+                  = "**** **** **** " + @default_card_information.last4
+                  %br
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                  = f. button '削除',class: "btn-red"
+                .text-right
+                  %p
+                    = link_to '#', target: "_blank" , class: 'link' do
+                      支払い方法について＞
+= render partial: "users/banner"
+= render partial: "users/footer"
+= render partial: "products/exhibit-btn.html"
