@@ -18,12 +18,20 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :cards, only: [:new, :edit, :show,:destroy] do
+  resources :tests, only: [:index]
+
+  resources :cards, only: [:new, :edit, :show] do
     collection do
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay' #トークン発行、カード登録
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
+
+  # get  'sign-up' => 'tests#top'
+  # get  'log-in' => 'tests#login'
+  # get  'user-confirm'　=> 'users#new'
+
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
   
@@ -38,3 +46,4 @@ Rails.application.routes.draw do
   end
 
 end
+
