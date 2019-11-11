@@ -15,7 +15,6 @@ document.addEventListener(
         // トークン作成
         Payjp.createToken(card, (status, response) => {
           if (status === 200) { //成功した場合
-            console.log(card)
             $("#card_number").removeAttr("name");
             $("#code").removeAttr("name");
             $("#expire_month").removeAttr("name");

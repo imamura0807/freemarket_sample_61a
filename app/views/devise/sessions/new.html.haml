@@ -1,17 +1,26 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.sign-up-top__container-1
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %header.header
+      = link_to '#' do
+        = image_tag 'mercari-logo', height:'49',width:'185'
+    %main.login
+      .no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to '#', class:'new' do
+          新規会員登録
+      .login-inner
+        = link_to '#',class:'icon' do
+          = image_tag 'facebook', height:'50',width:'328'
+        = link_to '#', class:'icon' do
+          = image_tag 'google1', height:'50',width:'328'
+      %form.input
+      .login-form-inner
+        .form-group
+          = f.email_field :email, placeholder: 'メールアドレス',class: 'login-input-text input-default'
+        .form-group
+          = f.password_field :password, placeholder: '8文字以上',class: 'login-input-text input-default'
+        .form-group.robott
+          = recaptcha_tags
+        = f.button "ログイン", class: "login-submit btn-default btn-red"
+    %footer.footer
+      = image_tag 'footer-mercari', height: '150', width: '387'
