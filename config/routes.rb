@@ -1,28 +1,32 @@
 Rails.application.routes.draw do
-  get 'purchases/new'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
 
-  resources :users, only: [:create, :destroy, :edit, :show, :new]
-  resources :products, only: [:new, :show, :create] do
+  resources :users, only: [:create, :destroy, :edit, :show, :new] do
+    collection do
+      get 'top'
+      get 'login'
+    end
+  end
+
+  resources :products, only: [:index, :new, :show, :create] do
       collection do
         get 'get_category_children', defaults: { format: 'json' }
         get 'get_category_grandchildren', defaults: { format: 'json' }
-        get 'get_size', defaults: { format: 'json' }
+        get 'get_size_type', defaults: { format: 'json' }
       end
   end
 
-  resources :users, only: [:destroy, :edit, :show]
-
-  resources :tests, only: [:index]
-  resources :cards, only: [:new]
-  get  'sign-up' => 'tests#top'
-  get  'log-in' => 'tests#login'
+  resources :cards, only: [:new, :edit, :show,:destroy] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay' #トークン発行、カード登録
+    end
+  end
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
-  get  'sign-up' => 'tests#top'
-  # get  'user-confirm'　=> 'users#new'
+  
   resources :signup do
     collection do
       get 'info'
@@ -34,4 +38,3 @@ Rails.application.routes.draw do
   end
 
 end
-

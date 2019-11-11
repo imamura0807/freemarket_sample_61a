@@ -39,6 +39,13 @@ $(document).on('turbolinks:load', function(){
         })
         $.each(images, function(index, image) {
           image.attr('data-image', index);
+          preview.append(image);
+          dropzone.css({
+            'width': `calc(100% - (135px * ${images.length - 5}))`
+          })
+        })
+        $.each(images, function(index, image) {
+          image.attr('data-image', index);
           preview2.append(image);
           dropzone2.css({
             'width': `calc(100% - (135px * ${images.length - 5}))`
@@ -60,7 +67,7 @@ $(document).on('turbolinks:load', function(){
           return;
         }
 
-    var new_image = $(`<input multiple= "multiple" name="product_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+    var new_image = $(`<input multiple= "multiple" name="images[url][]" class="upload-image ${images.length}" data-image= ${images.length} type="file" id="upload-image" style="display:none;">`);
     input_area.prepend(new_image);
   });
 // -----------------削除--------------------------

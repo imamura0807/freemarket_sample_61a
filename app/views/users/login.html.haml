@@ -14,12 +14,13 @@
         = image_tag 'google1', height:'50',width:'328'
     %form.input
     .login-form-inner
-      .form-group
-        %input.login-input-text.input-default{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
-      .form-group
-        %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/ 
-      .form-group.robott
-        = recaptcha_tags
-      %button.login-submit.btn-default.btn-red{type: "submit"} ログイン
+      = form_with(model: @user, url: new_user_session_path,  method: :get, local: :true) do |f|
+        .form-group
+          = f.email_field :email, placeholder: 'メールアドレス',class: 'login-input-text input-default'
+        .form-group
+          = f.password_field :password, placeholder: '8文字以上',class: 'login-input-text input-default'
+        .form-group.robott
+          = recaptcha_tags
+        = f.button "ログイン", class: "login-submit btn-default btn-red"
   %footer.footer
     = image_tag 'footer-mercari', height: '150', width: '387'

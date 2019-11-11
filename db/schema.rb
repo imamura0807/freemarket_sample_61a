@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_034636) do
+
+
+
+ActiveRecord::Schema.define(version: 2019_11_10_044102) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,16 +35,15 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "code", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "card_number", null: false
-    t.integer "expire_month", null: false
-    t.integer "expire_year", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -63,10 +66,10 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url"
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
@@ -81,21 +84,28 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "prefecture", null: false
-    t.bigint "user_id"
-    t.bigint "category_id"
     t.bigint "brand_id"
-    t.bigint "size_id"
     t.integer "purchased_at"
-    t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["size_id"], name: "index_products_on_size_id"
+    t.string "size"
     t.index ["user_id"], name: "index_products_on_user_id"
+    t.integer "purchased_at"
+    t.integer "category_id"
+    t.integer "size_type_id"
+    t.string "brand"
+  end
+
+  create_table "size_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "size_type", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "size_type_id"
+    t.integer "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,7 +132,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
     t.string "address_building"
     t.integer "address_phone_number"
     t.text "introduce"
-    t.integer "phone_number", null: false
+    t.bigint "phone_number", null: false
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -131,8 +141,4 @@ ActiveRecord::Schema.define(version: 2019_11_07_034636) do
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "products"
-  add_foreign_key "products", "brands"
-  add_foreign_key "products", "categories"
-  add_foreign_key "products", "sizes"
-  add_foreign_key "products", "users"
 end

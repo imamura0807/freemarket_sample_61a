@@ -1,21 +1,45 @@
-= render partial: "products/header" 
+= render partial: "products/header"
 = render partial: "users/home-1"
+
 %main.container-1
   .side 
     = render partial: "users/side"
   .contents
-    %h2.chapter-head-card 支払い方法
-    .single-inner
-      %section.single-content
-        %h3.chapter-sub-head クレジットカード一覧
-        %ul.settings-payment-list
-      %section.settings-card
-        .single-content
-          = link_to '#' , class: 'card-btn' do
-            %i.far.fa-credit-card
-            クレジットカードを追加する
-      .settings-not-regist
-        = link_to '#' , class: 'regist-btn' do
-          %span 支払い方法について>
+    .step1-to-step5__container-1
+      %main.step1-to-step5__main
+        %section.container
+          = form_with( url:pay_cards_path, method: :post, html: { name: "inputForm" }) do |f|
+            %h2.head.registration 支払い方法
+            .inner
+              .single-content
+                .form-group
+                  = f.label :'カード番号'
+                  %span.form-require 必須
+                  = f.text_field :card_number, placeholder: "半角数字のみ", class:'input-default',maxlength: "16"
+                  = image_tag 'card_5brand', height: '30', width:'250'
+                  = image_tag 'discovercard_logo', height: '30', width:'40'
+                  = image_tag 'saison', height: '30', width:'30'
+                .form-group
+                  = f.label :'有効期限'
+                  %span.form-require 必須
+                  %br/
+                  .expire-select-wrap
+                    .select-wrap
+                      = f.select :expire_month, Card.months.keys,{prompt: '---'}, class: "select-default"
+                    %span 月
+                    .select-wrap.select-wrap__month
+                      = f.select :expire_year, Card.years.keys,{prompt: '---'}, class: "select-default"
+                    %span 年
+                .form-group
+                  = f.label :'セキュリティーコード'
+                  %span.form-require 必須
+                  = f.text_field :code, placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default",maxlength: "4"
+                .text-right
+                  %p
+                    = link_to '#', target: "_blank" , class: 'link' do
+                      カード裏面の番号とは？
+                .form-group#card_token
+                = f.submit "追加する", class: "btn-default btn-red", id:"token_submit"
 = render partial: "users/banner"
 = render partial: "users/footer"
+= render partial: "products/exhibit-btn.html"

@@ -64,15 +64,15 @@ class SignupController < ApplicationController
 
       
     )
-  
 
     @user.build_card(user_params[:card_attributes]) # 入力値を引数で渡す
+
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      redirect_to '/log-in '
+      redirect_to '/users/top '
     end
   end
 
