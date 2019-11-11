@@ -18,19 +18,12 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :tests, only: [:index]
-
   resources :cards, only: [:new, :edit, :show,:destroy] do
     collection do
       post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
+      post 'pay', to: 'cards#pay' #トークン発行、カード登録
     end
   end
-
-  # get  'sign-up' => 'tests#top'
-  # get  'log-in' => 'tests#login'
-  # get  'user-confirm'　=> 'users#new'
-
   # 商品購入確認画面 仮のルート
   resources :purchases, only: [:new]
   
