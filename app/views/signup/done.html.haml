@@ -36,7 +36,7 @@
               %br
                 会員登録が完了しました。
           .form-group
-            -if user_sign_in?
+            -if user_signed_in?
               =link_to root_path do
                 %button.btn-default.btn-red{type: "submit"} メルカリを始める
             -else 

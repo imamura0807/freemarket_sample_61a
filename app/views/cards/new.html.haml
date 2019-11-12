@@ -1,4 +1,5 @@
 = render partial: "products/header"
+- breadcrumb :card
 = render partial: "users/home-1"
 
 %main.container-1
@@ -9,7 +10,7 @@
       %main.step1-to-step5__main
         %section.container
           = form_with( url:pay_cards_path, method: :post, html: { name: "inputForm" }) do |f|
-            %h2.head.registration 支払い方法
+            %h2.head.registration クレジットカード情報入力
             .inner
               .single-content
                 .form-group

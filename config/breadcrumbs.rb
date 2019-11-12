@@ -22,3 +22,12 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :payment do
+  link " 支払い方法", cards_path
+  parent :mypage
+end
+
+crumb :card do
+  link "クレジットカード情報入力", new_card_path
+  parent :payment
+end
