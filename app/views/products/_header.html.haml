@@ -20,10 +20,17 @@
           =link_to '#', class: 'list' do
             %i.fas.fa-list 
             カテゴリから探す
+          -# -------------ハンバーガーメニュ--------------------
+          %ul.header__menu-box--left__parents 
+            %li.header__menu-box--left__parents__parent
+              = link_to "レディース", category_path(id: 1)
+              = link_to "ベビー・キッズ"
+
         .right__box
           = link_to '#', class: 'list' do
             %i.fas.fa-tag
             ブランドから探す
+          -# -------------------------------------------------end
       - if user_signed_in? 
         .row-2__left
           .left__iine
