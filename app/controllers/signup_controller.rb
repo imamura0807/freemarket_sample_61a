@@ -18,12 +18,14 @@ class SignupController < ApplicationController
     session[:birthdate_month] = user_params[:birthdate_month]
     session[:birthdate_day] = user_params[:birthdate_day]
     @user = User.new # 新規インスタンス作成
+    
   end
 
   def address
     # authenticationで入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
+  
   end
 
   def payment_way
@@ -35,13 +37,15 @@ class SignupController < ApplicationController
     session[:address_building] = user_params[:address_building]
     session[:address_phone_numbe] = user_params[:address_phone_numbe]
     @user = User.new
-    @user.build_card
+    
+    # @user.build_card
   end
 
   def create # sessionに保存された値をインスタンスに渡す
-    
+    session[:payjp_token] = params[:'payjp-token'] #payment_wayで入力された値。イベント発火の際、発行されるトークンをsessionに代入
+
     @user = User.new(
-      nickname: session[:nickname], 
+      nickname: session[:nickname], #infoで入力された値
       email: session[:email],
       password: session[:password],
       password_confirmation: session[:password_confirmation],
@@ -53,9 +57,9 @@ class SignupController < ApplicationController
       birthdate_month: session[:birthdate_month],
       birthdate_day: session[:birthdate_day],
 
-      phone_number: session[:phone_number],
+      phone_number: session[:phone_number], #authenticationで入力された値
 
-      address_number: session[:address_number],
+      address_number: session[:address_number],#addressで登録された値
       address_prefecture: session[:address_prefecture],
       address_mayor_town: session[:address_mayor_town],
       address_block: session[:address_block],
@@ -65,19 +69,33 @@ class SignupController < ApplicationController
       
     )
 
-    @user.build_card(user_params[:card_attributes]) # 入力値を引数で渡す
-
     if @user.save
-      # ログインするための情報を保管
       session[:id] = @user.id
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']  #トークン作成
+      if session[:payjp_token].blank?
+        redirect_to payment_way_signup_index_path
+      else
+        customer = Payjp::Customer.create(
+          description: 'test',
+          card: session[:payjp_token]
+          )
+          @card = Card.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
+          if @card.save
+            sign_in @user
+          else
+            redirect_to payment_way_signup_index_path
+          end
+      end
+
       redirect_to done_signup_index_path
     else
-      redirect_to '/users/top '
+      redirect_to top_users_path
     end
   end
 
+
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+    # sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   private
@@ -103,8 +121,8 @@ class SignupController < ApplicationController
       :address_building,
       :address_phone_number,
 
-     card_attributes:[:id, :card_number, :expire_month, :expire_year, :code]
-  )
+    #  card_attributes:[:id, :card_number, :expire_month, :expire_year, :code]
+    )
   end
 
 

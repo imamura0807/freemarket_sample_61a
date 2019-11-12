@@ -36,7 +36,12 @@
               %br
                 会員登録が完了しました。
           .form-group
-            %button.btn-default.btn-red{type: "submit"} メルカリを始める
+            -if user_sign_in?
+              =link_to root_path do
+                %button.btn-default.btn-red{type: "submit"} メルカリを始める
+            -else 
+              =link_to top_users_path do
+                %button.btn-default.btn-red{type: "submit"} メルカリを始める
       .complete-header
         = image_tag 'complete.png', width:'700'
   %footer.step1-to-step5__footer
