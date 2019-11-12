@@ -4,13 +4,14 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{name: "turbolinks-cache-control", content: "no-cache"}
     %title FreemarketSample61a
-    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    -# %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: "https://www.google.com/recaptcha/api.js"}
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
    
 
   %body

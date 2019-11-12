@@ -12,14 +12,15 @@ document.addEventListener(
           exp_month: document.getElementById("expire_month").value,
           exp_year: document.getElementById("expire_year").value
         };
+        console.log(card)
         // トークン作成
         Payjp.createToken(card, (status, response) => {
           if (status === 200) { //成功した場合
-            console.log(card)
             $("#card_number").removeAttr("name");
             $("#code").removeAttr("name");
             $("#expire_month").removeAttr("name");
-            $("#expire_year").removeAttr("name"); //データを自サーバにpostしないように削除
+            $("#expire_year").removeAttr("name");
+            alert(response.id); //データを自サーバにpostしないように削除
             $("#card_token").append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             ); //取得したトークンを送信できる状態にします
