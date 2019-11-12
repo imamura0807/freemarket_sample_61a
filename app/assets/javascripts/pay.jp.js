@@ -12,7 +12,6 @@ document.addEventListener(
           exp_month: document.getElementById("expire_month").value,
           exp_year: document.getElementById("expire_year").value
         };
-        console.log(card)
         // トークン作成
         Payjp.createToken(card, (status, response) => {
           if (status === 200) { //成功した場合
