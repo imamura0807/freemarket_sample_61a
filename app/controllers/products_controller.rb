@@ -3,15 +3,14 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:new, :create]
 
   def index
-    @products = Product.all.limit(10)
-    # binding.pry
-    @images = Image.all.limit(10)
+    @products = Product.all.order("created_at DESC")
     # binding.pry
   end
 
   def new
     @product = Product.new
     @product.images.build
+
   end
 
   def get_category_children
