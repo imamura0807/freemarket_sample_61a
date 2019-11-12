@@ -19,13 +19,13 @@ class ProductsController < ApplicationController
   end
 
   def get_size_type
-    selected_grandchild = Category.find("#{params[:grandchild_id]}") #孫カテゴリーを取得
-    if related_size_type_parent = selected_grandchild.size_types[0] #孫カテゴリーと紐付くサイズ（親）があれば取得
-      @size_types = related_size_type_parent.children #紐づいたサイズ（親）の子供の配列を取得
+    selected_grandchild = Category.find("#{params[:grandchild_id]}") 
+    if related_size_type_parent = selected_grandchild.size_types[0] 
+      @size_types = related_size_type_parent.children 
     else
-      selected_child = Category.find("#{params[:grandchild_id]}").parent #孫カテゴリーの親を取得
-      if related_size_type_parent = selected_child.size_types[0] #孫カテゴリーの親と紐付くサイズ（親）があれば取得
-          @size_types = related_size_type_parent.children #紐づいたサイズ（親）の子供の配列を取得
+      selected_child = Category.find("#{params[:grandchild_id]}").parent 
+      if related_size_type_parent = selected_child.size_types[0] 
+          @size_types = related_size_type_parent.children 
       end
     end
   end
@@ -33,8 +33,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images.order("id DESC")
-    # @saler_products = Item.where(saler_id: @product.saler_id).limit(6).order('created_at DESC')
-    # @same_category_products = Item.where(category_id: @product.category_id).limit(6).order('created_at DESC')
+    # @same_user_products = Product.where(user_id: @product.user_id).limit(6).order('created_at DESC')
+    @same_category_products = Product.where(category_id: @product.category_id).limit(6).order('created_at DESC')
   end
 
   def create

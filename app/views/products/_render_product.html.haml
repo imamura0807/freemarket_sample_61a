@@ -1,11 +1,12 @@
 .render-product-3
   .render-product-3__image
+    = image_tag "#{product.images.last.url}", size: "220x220"
   .render-product-3__box
     %h3.render-product-3__box__name
-      商品名
+      = product.name
     .render-product-3__box__bottom
       .render-product-3__box__bottom__price
-        ¥20,000
+        = "￥ #{product.price.to_s(:delimited)}"
       .render-product-3__box__bottom__right
         %i.fa.fa-heart-o
         %span 0
