@@ -99,6 +99,9 @@
             visibility: visible;
             transition: all 05s ease 0s;
             opacity: 1;
+            .image{
+              width: 100%;
+            }
             .style_card{
               width: 100%;
               -webkit-box-align: center;
@@ -126,8 +129,7 @@
                 overflow: hidden;
                 position: relative;
               }
-                .style-card__text::after{
-                  content: '顔顔かお顔顔買お顔かお顔顔買お顔顔買お顔顔買お顔顔買お顔顔顔顔かオアコア';
+                .style-card{
                   background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
                   bottom: 0;
                   height: 50%;
@@ -142,6 +144,9 @@
               .style_thumbnail__N_xAi{
                 position: relative;
                 width: 100%;
+                padding: 0 0 100%;
+                height: 0;
+                overflow: hidden;
                 .label{
                   align-items: center;
                   background: rgba(0,0,0,.4);
@@ -157,9 +162,9 @@
                   position: absolute;
                   z-index: 2;
                 }
-                .image{
+                .images{
                   bottom: 0;
-                  // position: absolute;
+                  position: absolute;
                   top: 0;
                   height: 100%;
                   object-fit: cover;
