@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   
-  def destroy
-  end
 
   def edit
   end
@@ -18,10 +16,14 @@ class UsersController < ApplicationController
     
   end
 
+  def mypage
+  end
+
   def top
   end
 
-  def login
+
+  def logout
   end
 
   # private

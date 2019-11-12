@@ -7,8 +7,9 @@
   .contents
     %form.single-inner{action: "", method: "POST", novalidate: ""}
       .single-content
-      %button.btn-default.btn-red{type: "submit"} ログアウト
-      %input{name: "", type: "hidden", value: ""}/
+        = link_to destroy_user_session_path, method: :delete do
+          %button.btn-default.btn-red{type: "submit"} ログアウト
+          %input{name: "", type: "hidden", value: ""}/
 
 = render partial: "banner"
 = render partial: "footer"
