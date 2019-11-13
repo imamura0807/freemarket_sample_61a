@@ -6,12 +6,13 @@
     .purchases-3__box__main
       .purchases-3__box__main__inner
         .purchases-3__box__main__inner__box
-          .purchases-3__box__main__inner__box__image
-          .purchases-3__box__main__inner__box__name
-            商品名
+          .purchases-ra3__box__main__inner__box__image
+            = image_tag "#{@product.images[0].url}", size: "64x64"
+          %h2.purchases-3__box__main__inner__box__name
+            = @product.name
         .purchases-3__box__main__inner__price
           .purchases-3__box__main__inner__price__left
-            ¥ 20,000
+            = "¥" + "#{@product.price}"
           .purchases-3__box__main__inner__price__right
             送料込み
         .purchases-3__box__main__inner__point
@@ -20,19 +21,20 @@
           .purchases-3__box__main__inner__price2__left
             支払い金額
           .purchases-3__box__main__inner__price2__right
-            ¥ 20,000
-        .purchases-3__box__main__inner__submit
-          購入する
+            = "¥" + "#{@product.price}"
+        = form_tag(action: :buy, method: :post) do
+          %button{class:"purchases-3__box__main__inner__submit"}
+            購入する
     .purchases-3__box__send
       .purchases-3__box__send__inner
         %h2.purchases-3__box__send__inner__head
           配送先
         .purchases-3__box__send__inner__text
-          郵便番号
+          = "〒#{@user.address_number}"
           %br
-          住所
+          = "#{@user.address_prefecture}#{@user.address_mayor_town}#{@user.address_block}#{@user.address_building}"
           %br
-          名前
+          = "#{@user.last_name} #{@user.first_name}"
         .purchases-3__box__send__inner__link
           = link_to '', class: "purchases-3__angel__link" do
             %span 変更する
@@ -42,12 +44,14 @@
         %h2.purchases-3__box__send__inner__head
           支払い方法
         .purchases-3__box__send__inner__text
-          カード番号
+          = "**** **** **** " + @card_number.last4
           %br
-          日付
+          - exp_month = @card_number.exp_month.to_s
+          - exp_year = @card_number.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
           %br
           .jcb-icon
-            
+            = image_tag "jcb.gif", size: "30x23"
         .purchases-3__box__send__inner__link
           = link_to '', class: "purchases-3__angel__link" do
             %span 変更する

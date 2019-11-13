@@ -79,8 +79,7 @@
             .show-box-3__main__first__box__price__right
               送料込み
           .show-box-3__main__first__box__check
-            = link_to (), class: "link-5" do
-              購入画面に進む
+            = link_to "購入画面に進む", product_purchases_path(@product.id), class:"link-5"
           -# .show-box-3__main__box__app
           -#   この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
           %h2.show-box-3__main__first__box__comment
