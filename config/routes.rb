@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :edit, :new] do
     collection do
-      get 'top'
-      get 'logout'
-      get 'mypage'
+      get 'top', to: 'users#top'
+      get 'logout', to: 'users#logout'
+      get 'mypage', to: 'users#mypage'
     end
   end
 
@@ -36,11 +36,11 @@ Rails.application.routes.draw do
   
   resources :signup do
     collection do
-      get 'info'
-      get 'authentication'
-      get 'address'
-      get 'payment_way' # ここで、入力の全てが終了する
-      get 'done' # 登録完了後のページ
+      get 'info', to: 'signup#info'
+      get 'authentication', to: 'signup#authentication'
+      get 'address', to: 'signup#address'
+      get 'payment_way', to: 'signup#payment_way'
+      get 'done', to: 'signup#done'
     end
   end
 
