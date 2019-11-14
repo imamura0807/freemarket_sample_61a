@@ -16,7 +16,7 @@ set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/imamura0807-2.pem'] 
+                  keys: ['~/.ssh/imamura3.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -27,24 +27,24 @@ set :keep_releases, 5
 
 #secrets.ymlではリリースバージョン間でシンボリックリンクにして共有
 #credentials.yml.encではmasterkeyにする（今回）
-# set :linked_files, %w{config/master.key}
+set :linked_files, %w{config/master.key}
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
-# after 'deploy:publishing', 'deploy:restart'
-# namespace :deploy do
-#   task :restart do
-#     invoke 'unicorn:restart'
-#   end
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
 
-  # desc 'upload master.key'
-  # task :upload do
-  #   on roles(:app) do |host|
-  #     if test "[ ! -d #{shared_path}/config ]"
-  #       execute "mkdir -p #{shared_path}/config"
-  #     end
-  #     upload!('config/master.key', "#{shared_path}/config/master.key")
-  #   end
-  # end
-  # before :starting, 'deploy:upload'
-  # after :finishing, 'deploy:cleanup'
+  desc 'upload master.key'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/master.key', "#{shared_path}/config/master.key")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
