@@ -77,10 +77,11 @@
         }
       }
     }
-    .mypage__tab-container-notification-todo{
+    // .mypage__tab-container-notification-todo{
+      .container{
       margin: 0;
       background: #fff;
-      .tabs{
+      .menu{
         border: 0;
         background: #eee;
         display: flex;
@@ -89,7 +90,7 @@
           display: inline-block;
           text-align: center;
           vertical-align: top;
-          .list{
+          .menu_item{
             position: relative;
             display: block;
             color: #333;
@@ -98,8 +99,61 @@
             text-decoration: none;
             font-weight: bold;
           }
+          .active{
+            border-top: 2px solid #ea352d;
+            background-color: white;
+          }
         }
       }
+      .content{
+        display: none;
+        .content-text{
+          padding: 160px 0 60px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+        }
+      }
+        .show{
+          display: block;
+          li{
+            border-bottom: 1px solid #eee;
+            position: relative;
+            .mypage-go-list{
+              padding: 16px;
+              background: #eee;
+              color: #333;
+              text-align: center;
+            }
+            .mypage-item-link{
+              display: block;
+              min-height: 80px;
+              padding: 16px;
+              color: #333;
+              .mypage-item-body{
+                margin: 0 40px 0 68px;
+                line-height: center;
+              }
+              figure{
+                position: relative;
+                overflow: hidden;
+                float: left;
+                width: 48px;
+                height: 48px;
+                img{
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      
     }
     .mypage__tab-container{
       margin: 40px 0 0;
@@ -111,27 +165,47 @@
         font-weight: bold;
         line-height: 72px;
       }
-      .tabs{
-        border: 0;
-        background: #eee;
-        display: flex;
-        li{
-          width: 50%;
-          display: inline-block;
-          text-align: center;
-          vertical-align: top;
-          .list{
-            position: relative;
-            display: block;
-            color: #333;
-            font-size: 16px;
-            line-height: 72px;
-            text-decoration: none;
-            font-weight: bold;
+        .menu-container{
+          margin: 0;
+          background: #fff;
+          .menu-1{
+            border: 0;
+            background: #eee;
+            display: flex;
+            li{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              .tabs{
+                position: relative;
+                display: block;
+                color: #333;
+                font-size: 16px;
+                line-height: 72px;
+                text-decoration: none;
+                font-weight: bold;
+              }
+              .act{
+                border-top: 2px solid #ea352d;
+                background-color: white;
+              }
+            }
           }
         }
-      } 
+        .cont{
+          display: none;
+          .content-1{
+            padding: 160px 0 60px;
+            text-align: center;
+            font-size: 16px;
+            color: #ccc;
+          }
+        }
+          .sho{
+            display: block;
+          }
     }
+    
   }
-  
 }

@@ -2,7 +2,7 @@
   .header-2__global
     .global__row-1
       .row-1__right
-        =link_to '#', class: 'home'  do
+        =link_to root_path, class: 'home'  do
           .home-btn
            
 
@@ -46,7 +46,8 @@
               %i.fal.fa-check
               やることリスト
           .left__maipe-ji
-            = link_to mypage_users_path , class: 'icon'  do
+            -# = link_to '#' , class: 'icon'  do
+            = link_to user_path(current_user.id) , class: 'icon'  do
               %i.fas.fa-user-circle
               マイページ
       - else
