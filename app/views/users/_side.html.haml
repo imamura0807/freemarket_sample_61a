@@ -70,7 +70,7 @@
   %h3.mypage__nav-head 設定
   %ul.mypage__nav-list
     %li
-      = link_to '#', class: "item" do
+      = link_to  edit_user_path(current_user.id), class: "item" do
         プロフィール
         %i.fal.fa-chevron-right
     %li
@@ -78,7 +78,7 @@
         発送元・お届け先住所変更
         %i.fal.fa-chevron-right
     %li
-      = link_to cards_path, class: "item" do
+      = link_to cards_path(current_user.id), class: "item" do
         支払い方法
         %i.fal.fa-chevron-right
     %li
@@ -86,7 +86,7 @@
         メール/パスワード
         %i.fal.fa-chevron-right
     %li
-      = link_to '#', class: "item" do
+      = link_to new_user_path(current_user.id), class: "item" do
         本人情報
         %i.fal.fa-chevron-right
     %li
@@ -94,6 +94,6 @@
         電話番号の確認
         %i.fal.fa-chevron-right
     %li
-      = link_to logout_users_path , class: "item" do
+      = link_to logout_users_path(current_user.id) , class: "item" do
         ログアウト
         %i.fal.fa-chevron-right

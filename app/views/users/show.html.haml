@@ -1,0 +1,90 @@
+= render partial: "products/header"
+- breadcrumb :mypage
+= render partial: "home-1"
+
+%main.container-1
+  .side 
+    = render partial: "side"
+  .contents
+    %section.mypage__user-icon
+      = link_to '#', class:'user_icon' do
+        %figure
+          = image_tag 'face.png',height:'60',width:'60'
+        %h2.user-name 
+          = @nickname
+        .mypage-number
+          %div
+            評価
+            %span.bold 0
+          %div
+            出品数
+            %span.bold 0
+ 
+    .container
+      %ul.menu
+        %li
+          = link_to '#', class: 'menu_item active' do
+            お知らせ
+        %li
+          = link_to '#', class: 'menu_item' do
+            やることリスト
+
+      .contents
+        %ul.content.show
+          %li 
+            .mypage-item-link
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text aaaaaaaaaa
+          %li 
+            .mypage-item-link
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text aaaaaaaaaa
+          %li 
+            .mypage-item-link
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text aaaaaaaaaa
+          %li
+            .mypage-go-list 一覧を見る
+            
+
+        %ul.content
+          %li.content-text 現在やるリストはありません
+
+    %section.mypage__tab-container
+      %h2.mypage__tab-head 購入した商品
+      .menu-container
+        %ul.menu-1
+          %li
+            = link_to '#', class: 'tabs act' do
+              取引中
+          %li
+            = link_to '#', class: 'tabs' do
+              過去の取引
+        .content
+          .content-text
+            %ul.cont.sho
+              %li
+                .content-1 取引中に商品がありません
+            %ul.cont  
+              %li  
+                .content-1 過去に取引した商品がありません
+            
+      -# %ul.tabs
+      -#   %li
+      -#     %h3
+      -#       = link_to '#', class: 'list' do
+      -#         取引中
+      -#   %li
+      -#     %h3
+      -#       = link_to '#', class: 'list' do
+      -#         過去の取引
+
+= render partial: "banner"
+= render partial: "footer"
+= render partial: "products/exhibit-btn.html"
