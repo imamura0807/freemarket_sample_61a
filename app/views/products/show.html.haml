@@ -122,8 +122,7 @@
       = link_to "◯◯さんのその他の出品", "#", class:"show-box-3__main__user__name"
     .show-box-3__main__box
       .show-box-3__main__box__users
-        -# - @same_user_products.each do |product|
-        - @same_category_products.each do |product|
+        - @same_user_products.each do |product|
           = render partial: 'render_product', locals: { product: product }
     .show-box-3__main__user
       = link_to "#{@product.category.name}その他の出品", "#", class:"show-box-3__main__user__name"
