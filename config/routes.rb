@@ -43,5 +43,6 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  resources :category, only: [:new]
 
 end

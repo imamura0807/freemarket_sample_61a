@@ -1,6 +1,4 @@
 .header-2
-  = link_to destroy_user_session_path, method: :delete do
-    ログアウト 
   .header-2__global
     .global__row-1
       .row-1__right
@@ -17,13 +15,22 @@
     .global__row-2
       .row-2__right
         .right__box
-          =link_to '#', class: 'list' do
+          =link_to '#', class: 'list humberger' do
             %i.fas.fa-list 
             カテゴリから探す
+          -# -------------ハンバーガーメニュ--------------------
+          %ul.humberger__list
+            .parents__list
+              - @parents.each do |parent|
+                %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
+            .children_list
+            .grand_children_list
+
         .right__box
           = link_to '#', class: 'list' do
             %i.fas.fa-tag
             ブランドから探す
+          -# -------------------------------------------------end
       - if user_signed_in? 
         .row-2__left
           .left__iine

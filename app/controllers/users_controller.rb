@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  include CommonActions
+  before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
 
   def edit
   end
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
+    
   end
 
   def top
