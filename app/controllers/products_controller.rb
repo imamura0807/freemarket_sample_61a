@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
+
+  include CommonActions
+
   before_action :set_product, only: [:show]
   before_action :set_category, only: [:new, :create]
+  before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
 
   def index
     @products = Product.all.order("created_at DESC")
@@ -35,7 +39,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images.order("id DESC")
-    # @same_user_products = Product.where(user_id: @product.user_id).limit(6).order('created_at DESC')
+    @same_user_products = Product.where(user_id: @product.user_id).limit(6).order('created_at DESC')
     @same_category_products = Product.where(category_id: @product.category_id).limit(6).order('created_at DESC')
   end
 
@@ -56,15 +60,9 @@ class ProductsController < ApplicationController
 
   private
 
-  def set_product
-    # とりあえず後に修正
-    @product = Product.find(1)
-    # (params[:id])
-  end
 
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :status, :charge_burden, :prefecture, :send_days, :price, :size_type_id, :brand, images_attributes: [:id, :url])
-    # .merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :status, :charge_burden, :prefecture, :send_days, :price, :size_type_id, :brand, images_attributes: [:id, :url]).merge(user_id: current_user.id)
   end
 
   def new_image_params

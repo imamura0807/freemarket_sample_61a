@@ -17,6 +17,14 @@ Rails.application.routes.draw do
         get 'get_category_grandchildren', defaults: { format: 'json' }
         get 'get_size_type', defaults: { format: 'json' }
       end
+        
+    resources :purchases, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'buy', to: 'purchase#buy'
+        get 'done', to: 'purchase#done'
+      end
+    end
   end
 
   resources :cards, only: [:new, :edit, :show,:destroy] do
@@ -25,8 +33,6 @@ Rails.application.routes.draw do
       post 'pay', to: 'cards#pay' #トークン発行、カード登録
     end
   end
-  # 商品購入確認画面 仮のルート
-  resources :purchases, only: [:new]
   
   resources :signup do
     collection do
@@ -37,5 +43,6 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  resources :category, only: [:new]
 
 end
