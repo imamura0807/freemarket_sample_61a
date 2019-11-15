@@ -1,6 +1,4 @@
 .header-2
-  = link_to destroy_user_session_path, method: :delete do
-    ログアウト 
   .header-2__global
     .global__row-1
       .row-1__right
@@ -17,14 +15,16 @@
     .global__row-2
       .row-2__right
         .right__box
-          =link_to '#', class: 'list' do
+          =link_to '#', class: 'list humberger' do
             %i.fas.fa-list 
             カテゴリから探す
           -# -------------ハンバーガーメニュ--------------------
-          %ul.header__menu-box--left__parents 
-            %li.header__menu-box--left__parents__parent
-              = link_to "レディース", category_path(id: 1)
-              = link_to "ベビー・キッズ"
+          %ul.humberger__list
+            .parents__list
+              - @parents.each do |parent|
+                %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
+            .children_list
+            .grand_children_list
 
         .right__box
           = link_to '#', class: 'list' do

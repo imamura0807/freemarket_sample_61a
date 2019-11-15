@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
+
+  include CommonActions
+
   before_action :set_product, only: [:show]
   before_action :set_category, only: [:new, :create]
+  before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
 
   def index
     @products = Product.all.order("created_at DESC")
