@@ -1,7 +1,7 @@
 .step1-to-step5__container-1
   %header.step1-to-step5__header
     =link_to '#' do
-      = image_tag 'mercari-logo', height:'49',width:'185'
+      = image_tag 'mercari-logo.png', height:'49',width:'185'
     %nav.progress
       %ul.progress-bar
         %li.through#through
@@ -34,9 +34,9 @@
               = f.label :'カード番号'
               %span.form-require 必須
               = f.text_field :card_number, placeholder: "半角数字のみ", class:'input-default',maxlength: "16"
-              = image_tag 'card_5brand', height: '30', width:'250'
-              = image_tag 'discovercard_logo', height: '30', width:'40'
-              = image_tag 'saison', height: '30', width:'30'
+              = image_tag 'card_5brand.png', height: '30', width:'250'
+              = image_tag 'discovercard_logo.jpg', height: '30', width:'40'
+              = image_tag 'saison.png', height: '30', width:'30'
             .form-group
               = f.label :'有効期限'
               %span.form-require 必須
@@ -59,4 +59,4 @@
             .form-group#card_token
             = f.button "次へ進む", class: "btn-default btn-red",id:"token_submit"
   %footer.step1-to-step5__footer
-    = image_tag 'footer-mercari', height: '150', width: '387'
+    = image_tag 'footer-mercari.png', height: '150', width: '387'
