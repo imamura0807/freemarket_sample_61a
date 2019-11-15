@@ -1,7 +1,9 @@
 class CardsController < ApplicationController
-
+  include CommonActions
   require "payjp"
   before_action :set_card
+  before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
+
 
   def new
     card = Card.where(user_id: current_user.id)
