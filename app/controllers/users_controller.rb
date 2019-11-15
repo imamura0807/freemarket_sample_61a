@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    # @category_nil= Category.where(ancestry: nil)
+    
   end
 
   def top
