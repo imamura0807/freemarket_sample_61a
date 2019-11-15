@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function(){
+
 $( function() {
   $("#product_price").on("keyup", function(e) {
     e.preventDefault();
@@ -12,4 +14,6 @@ $( function() {
       $('.container-3__main__price__box2__top3__right').text('-');
     }
   })
+})
+
 })
