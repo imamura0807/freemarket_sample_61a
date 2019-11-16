@@ -292,3 +292,37 @@ td{
   opacity: 0.5;
 }
 
+
+.product-buttons {
+  margin: 24px 0;
+  padding: 8px 0px;
+  /*-- 削除ボタン --*/
+  &__delete-button {
+    width: 100%;
+    height: 50px;
+    background: #aaa;
+    border: 1px solid #eee;
+    color: white;
+    display: block;
+    margin: 16px 0;
+    padding: 1px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 400;
+  }
+  /*-- 編集ボタン --*/
+  &__edit-button {
+    width: 100%;
+    height: 50px;
+    background: #ea352d;
+    border: 1px solid #eee;
+    color: white;
+    display: block;
+    margin: 16px 0;
+    padding: 1px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+

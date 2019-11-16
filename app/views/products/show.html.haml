@@ -95,6 +95,10 @@
             .show-box-3__main__first__box__bottom__key
               = fa_icon "lock"
               あんしん・あんぜんへの取り組み
+          - if user_signed_in?
+            .product-buttons
+              = link_to "商品の編集", edit_product_path(@product.id), class: "product-buttons__edit-button"
+              = link_to "商品の削除", @product, method: :delete, data: { confirm: "アイテム「#{@product.name}」を削除します。よろしいですか？"}, class: "product-buttons__delete-button"
     .show-box-3__main__comment
       = form_with do |f|
         %h2.show-box-3__main__comment__top
