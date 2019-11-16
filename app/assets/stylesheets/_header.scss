@@ -109,7 +109,10 @@
             position: relative;
             z-index: 3;
             padding: 0px 10px;
+            //-------- ハンバーガーメニューで使用------
+            position: relative;
             
+            //-------------------------------------
 
             .list{
               text-decoration: none ;
@@ -119,6 +122,7 @@
               line-height: 36px;
               white-space: nowrap;
               color: black;
+              
             }  
             .fas{
               font: normal normal normal 14px/1 FontAwesome;
@@ -129,8 +133,11 @@
               margin-right: 4px;  
               
               }
+            .humberger:hover {
+            color: lightblue;
           }
         }
+      }
         .row-2__left{
           display: flex;
           position: relative;
@@ -217,4 +224,57 @@
         }
       }
     }
+}
+// ----------- ハンバーガーメニュー ---------------
+
+.humberger__list{
+  z-index: 1000;
+  width: auto;
+  display: none;
+  a{
+    display: block;
+    color:black;
+    padding: 10px 5px 10px 5px;
+    margin: 10px 5px 10px 5px;
+    font-size:13px;
+  }
+  li{
+    width:240px;
+  }
+  .parents__list {
+    position: absolute;
+    // top: 44px;
+    left: 0;
+    background: white;
+    z-index: 1000;
+    .now-selected-red{
+      background: red;
+      color: white;
+    }
+  
+  }
+  .children_list {
+    background: white;
+    z-index: 1000;
+    // width:100%;
+    position: absolute;
+    // top:10px;
+    left:224px;
+    .now-selected-gray{
+      background: rgb(204, 202, 202);
+    }
+    
+    
+  }
+  .grand_children_list{
+    background: white;
+    z-index: 1000;
+    // width:100%;
+    position: absolute;
+    // top:10px;
+    left:460px;
+  }
+  .grand_children_list li :hover{
+    background: rgb(204, 202, 202);
+  }
 }

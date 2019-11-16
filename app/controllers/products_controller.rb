@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
+
   before_action :set_category, only: [:new, :create, :edit, :update]
-
-
+#   include CommonActions
   def index
     @products = Product.all.order("created_at DESC")
   end
