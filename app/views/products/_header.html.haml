@@ -7,10 +7,11 @@
            
 
       .row-1__left
-        %input.kennsaku{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-        .kennsaku__right
-          .serch__btn
-            %i.fas.fa-search
+        = form_tag(searches_path,method: :get) do
+          %input.kennsaku{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+          .kennsaku__right
+            .serch__btn
+              %i.fas.fa-search
 
     .global__row-2
       .row-2__right
@@ -21,8 +22,8 @@
           -# -------------ハンバーガーメニュ--------------------
           %ul.humberger__list
             .parents__list
-              - @parents.each do |parent|
-                %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
+              -# - @parents.each do |parent|
+              -#   %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
             .children_list
             .grand_children_list
 

@@ -14,24 +14,19 @@
             必須
         %h2.container-3__main__image__middle
           最大5枚までアップロードできます
-          = f.fields_for :images do |image|
+          = f.fields_for :image do |image|
             .dropzone-container
               .dropzone-preview
                 #preview
-                .dropzone-area
-                  = image.label :url, class: "dropzone-box", for: "upload-image" do
-                    .input_area
-                      = image.file_field :url, multiple: true, name: 'images[url][]', id: 'upload-image', class: 'upload-image', 'data-image': 0
-                    %p.text
-                      ドラッグアンドドロップ
-                      %br またはクリックしてファイルをアップロード
-              -# .dropzone-preview2
-              -#   #preview2
-              -#   .dropzone-area2
-              -#     = image.label :image, class: "dropzone-box", for: "upload-image" do
-              -#       %p.text
-              -#         ドラッグアンドドロップ
-              -#         %br またはクリックしてファイルをアップロード
+                  - @product.images.each do |image|
+                    .img_view
+                      .img_view_upper
+                        = image_tag "#{image.url}", class: "product-new-img"
+                      .btn_wrapper
+                        .btn_edit
+                          編集
+                        .btn_delete
+                          削除
       .container-3__main__product
         .ontainer-3__main__product__name
           %h2.container-3__main__product__name__top
@@ -56,8 +51,40 @@
             %span.listing-default--require 必須
             .listing-select-wrapper
               .select__box
-                = f.select :category_id, @category_parent_array, {}, {class: 'select-default', id: 'parent_category'}
-                %i.fa.fa-angle-down.listing-select-wrapper__box--arrow-down
+                = f.select :category_id, options_for_select(@category_parents_array.map{|c|[c[:name], c[:name]]}, @selected_parent_category.name), {}, {class: 'select-default', id: 'parent_category'}
+                %i.fa.fa-angle-down
+            %div#children_wrapper
+              .select__box
+                = f.select :category_id, options_for_select(@category_children_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}, @selected_child_category.id), {}, {class: 'select-default', id: 'child_category'}
+                %i.fa.fa-angle-down
+            %div#grandchildren_wrapper
+              .select__box
+                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}, @selected_grandchild_category.id), {}, {class: 'select-default', id: 'grandchild_category'}
+                %i.fa.fa-angle-down
+
+          - if @product.size_type
+            .form__group
+              = f.label :size_type_id do
+                サイズ
+                %span.necessary 必須
+              %div
+                .select__box
+                  %i.fa.fa-angle-down
+                  = f.select :size_type_id, options_for_select(@size_types_array.map{|c|[c[:size_type], c[:id]]}, @selected_size_type.id), {}, {class: 'select-default'}
+          - if @product.brand
+            .form__group
+              = f.label :brand do
+                ブランド
+                %span.form-arbitrary 任意
+              %div
+                %input.c-input-default{name: "product[brand]", type: "text", :placeholder => "例）シャネル", :value => "#{@product.brand}"}/
+          - else 
+            .form__group
+              = f.label :brand do
+                ブランド
+                %span.form-arbitrary 任意
+              %div
+                %input.c-input-default{name: "product[brand]", type: "text", :placeholder => "例）シャネル", :value => ""}/
           %h2.container-3__main__detail__box2__top2
             商品の状態
             %span.necessary
@@ -108,13 +135,13 @@
           .container-3__main__price__box2__top2
             %h2.container-3__main__price__box2__top2__left
               販売手数料(10%)
-            %h2.container-3__main__price__box2__top2__right -
-              
+            .container-3__main__price__box2__top2__right
+              = "¥" + "#{@fee}"
           .container-3__main__price__box2__top3
             %h2.container-3__main__price__box2__top3__left
               販売利益
-            %h2.container-3__main__price__box2__top3__right -
-              
+            %h2.container-3__main__price__box2__top3__right
+              = "¥" + "#{@profit}"
       .container-3__main__check
         .container-3__main__check__text
           %p
@@ -130,7 +157,7 @@
             また、出品をもちまして
             = link_to "加盟店規約", "*", class:"link-3"
             に同意したことになります。
-        = f.submit '出品する', class: "button"
+        = f.submit '変更する', class: "button"
         =link_to 'もどる', root_path, class:"return"
       
   .container-3__footer

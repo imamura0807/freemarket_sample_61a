@@ -1,0 +1,21 @@
+= render 'products/header'
+.search-container
+  .search-left
+    = render 'side'
+  .search-right
+    - if @keyword.empty?
+      = render 'new'
+      = render partial: 'product-card', locals: { products: @new_products }
+    - elsif @products.present?
+      = render partial: 'result', locals: { keyword: @keyword }
+      .search-right__product-count
+        = "1 - #{@products.length}件表示"
+      = render partial: 'product-card', locals: { products: @products }
+    - else
+      = render partial: 'result', locals: { keyword: @keyword }
+      %p.search-right__nothing-text
+        該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+      = render 'new'
+      = render partial: 'product-card', locals: { products: @new_products }
+= render partial: "users/banner"
+= render partial: "users/footer"

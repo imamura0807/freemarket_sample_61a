@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
                             <span class="form-arbitrary">任意</span>
                           </label>
                           <div>
-                            <input class="c-input-default" value="" placeholder="例）シャネル" type="text" name="product[brand_id]">
+                            <input class="c-input-default" value="" placeholder="例）シャネル" type="text" name="product[brand]">
                           </div>
                         </div>`;
       $('.listing-product-detail__category').append(sizeSelectHtml);
