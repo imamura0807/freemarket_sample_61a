@@ -33,19 +33,23 @@
             .form-group
               = f.label :'郵便番号'
               %span.form-require 必須
-              = f.text_field :address_number, placeholder: "例）123-456", class:'input-default'
+              = f.text_field :address_number, placeholder: "例）123-456", class:'input-default',id: 'has-error'
+              = render partial: 'address_error-messages', locals: {user: @user, column: "address_number"} #エラーメッセージの表示
             .form-group
               = f.label :'都道府県'
               %span.form-require 必須
-              = f.select :address_prefecture, User.prefectures.keys,{prompt: '---'}, class:'input-default'
+              = f.select :address_prefecture, User.prefectures.keys,{prompt: '---'}, class:'input-default',id: 'has-error'
+              = render partial: 'address_error-messages', locals: {user: @user, column: "address_prefecture"} #エラーメッセージの表示
             .form-group
               = f.label :'市区町村'
               %span.form-require 必須
-              = f.text_field  :address_mayor_town, placeholder: "例）名古屋市中区", class:'input-default'
+              = f.text_field  :address_mayor_town, placeholder: "例）名古屋市中区", class:'input-default',id: 'has-error'
+              = render partial: 'address_error-messages', locals: {user: @user, column: "address_mayor_town"} #エラーメッセージの表示
             .form-group
               = f.label :'番地'
               %span.form-require 必須
-              = f.text_field :address_block, placeholder: "例）緑山1-1-1", class:'input-default'
+              = f.text_field :address_block, placeholder: "例）緑山1-1-1", class:'input-default',id: 'has-error'
+              = render partial: 'address_error-messages', locals: {user: @user, column: "address_block"} #エラーメッセージの表示
             .form-group
               = f.label :'建物名'
               %span.form-option 任意
