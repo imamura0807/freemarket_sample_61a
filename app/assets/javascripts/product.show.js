@@ -1,5 +1,4 @@
-$(function() {
-
+$(document).on('turbolinks:load', function(){
   $(function() {
     $('img.sub_image').mouseover(function(){
       var ImgSrc = $(this).attr("src");
