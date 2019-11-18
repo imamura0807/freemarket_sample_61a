@@ -1,0 +1,17 @@
+.search-right__products
+  - products.each do |product|
+    = link_to product_path(product.id) do
+      .search-right__products__product
+        .search-right__products__product--price
+          = "￥ #{product.price.to_s(:delimited)}"
+        - if product.images.first
+          = image_tag "#{product.images.first.url}", class: "search-right__products__product--image"
+          .search-right__products__product__text-box
+            .search-right__products__product__text-box--name
+              %h3
+                = product.name
+            .search-right__products__product__text-box__bottom
+            
+              .search-right__products__product__text-box__bottom--like
+                %i.fa.fa-heart
+                %span 0
