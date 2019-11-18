@@ -32,7 +32,8 @@
           .single-content
             .form-group
               = f.label :'携帯電話の番号'
-              =f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class:'input-default'
+              =f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class:'input-default',id: 'has-error'
+              = render partial: 'authentication_error-messages', locals: {user: @user, column: "phone_number"} #エラーメッセージの表示
               %p.single-text
                 本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
             .form-group
