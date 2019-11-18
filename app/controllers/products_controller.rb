@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
 
   before_action :set_category, only: [:new, :create, :edit, :update]
-#   include CommonActions
+  include CommonActions
+  before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
+
   def index
     @products = Product.all.order("created_at DESC")
   end
@@ -41,6 +43,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     respond_to do |format|
+      binding.pry
       if @product.save
           params[:images][:url].each do |url|
             @product.images.create(url: url, product_id: @product.id)
