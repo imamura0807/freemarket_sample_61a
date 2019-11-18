@@ -75,10 +75,11 @@ class SignupController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']  #トークン作成
+      Payjp.api_key = 'sk_test_9f6a8ecef37254c2b61f6d4b'#トークン作成
       if session[:payjp_token].blank?
         redirect_to payment_way_signup_index_path
       else
+        
         customer = Payjp::Customer.create(
           description: 'test',
           card: session[:payjp_token]
@@ -159,7 +160,7 @@ class SignupController < ApplicationController
     @user = User.new(
       email: session[:email],
       password: session[:password],
-      
+
       address_number: session[:address_number],#addressで登録された値
       address_prefecture: session[:address_prefecture],
       address_mayor_town: session[:address_mayor_town],

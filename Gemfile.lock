@@ -389,11 +389,8 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
-<<<<<<< HEAD
   rails-i18n
-=======
   ransack
->>>>>>> ce034609e003252413ce33659236e5f8719323fa
   recaptcha
   sass-rails (~> 5.0)
   selenium-webdriver

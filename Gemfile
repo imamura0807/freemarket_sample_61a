@@ -95,8 +95,5 @@ gem 'dotenv-rails'
 gem 'gon'
 gem 'gretel'
 gem 'payjp'
-<<<<<<< HEAD
 gem 'rails-i18n'
-=======
 gem 'ransack'
->>>>>>> ce034609e003252413ce33659236e5f8719323fa
