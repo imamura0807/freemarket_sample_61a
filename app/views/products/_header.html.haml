@@ -22,8 +22,8 @@
           -# -------------ハンバーガーメニュ--------------------
           %ul.humberger__list
             .parents__list
-              -# - @parents.each do |parent|
-              -#   %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
+              - @parents.each do |parent|
+                %li= link_to "#{parent.name}", "#",class: "parent_category",id: "#{parent.id}"
             .children_list
             .grand_children_list
 

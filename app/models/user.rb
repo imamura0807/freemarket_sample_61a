@@ -18,16 +18,18 @@ class User < ApplicationRecord
 
   # ----------バリデーション----------------------------------------------------
   VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
+  VALID_LAST_NAME =                  /\A[一-龥ぁ-ん]/ # 全角ひらがな、漢字
+  VALID_FIRST_NAME =                 /\A[一-龥ぁ-ん]/ # 全角ひらがな、漢字
+  VAILD_NAME_KANA =                   /\A[ァ-ヶー－]+\z/ # 全角カタカナ
   # info入力項目
   validates :nickname,                presence: true, length: {maximum: 20} ,on: :validates_info
   validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }, on: :validates_info
   validates :password,                presence: true, length: {minimum: 8, maximum: 128}, on: :validates_info
   validates :password_confirmation,   presence: true, length: {minimum: 8, maximum: 128}, on: :validates_info
-  validates :last_name,               presence: true, on: :validates_info
-  validates :first_name,              presence: true, on: :validates_info
-  validates :last_name_kana,          presence: true, on: :validates_info
-  validates :first_name_kana,         presence: true, on: :validates_info
+  validates :last_name,               presence: true, format: { with: VALID_LAST_NAME }, on: :validates_info 
+  validates :first_name,              presence: true, format: { with: VALID_FIRST_NAME}, on: :validates_info
+  validates :last_name_kana,          presence: true, format: { with: VAILD_NAME_KANA }, on: :validates_info
+  validates :first_name_kana,         presence: true, format: { with: VAILD_NAME_KANA }, on: :validates_info
   validates :birthdate_year,          presence: true, on: :validates_info
   validates :birthdate_month,         presence: true, on: :validates_info
   validates :birthdate_day,           presence: true, on: :validates_info
@@ -36,7 +38,7 @@ class User < ApplicationRecord
   validates :phone_number,           presence: true, uniqueness: true, on: :validates_authentication
 
   # address 入力項目
-  validates :address_number,           presence: true, length: {maximum: 6},on: :validates_address
+  validates :address_number,           presence: true, length: {maximum: 7},on: :validates_address
   validates :address_prefecture,       presence: true, on: :validates_address
   validates :address_mayor_town,       presence: true, on: :validates_address
   validates :address_block,            presence: true, on: :validates_address

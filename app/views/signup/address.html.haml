@@ -33,7 +33,7 @@
             .form-group
               = f.label :'郵便番号'
               %span.form-require 必須
-              = f.text_field :address_number, placeholder: "例）123-456", class:'input-default',id: 'has-error'
+              = f.text_field :address_number, placeholder: "例）123-4567", class:'input-default',id: 'has-error'
               = render partial: 'address_error-messages', locals: {user: @user, column: "address_number"} #エラーメッセージの表示
             .form-group
               = f.label :'都道府県'

@@ -17,8 +17,10 @@
       .login-form-inner
         .form-group
           = f.email_field :email, placeholder: 'メールアドレス',class: 'login-input-text input-default'
+          -# = render partial: 'sign-in_error-messages', locals: {user: @user, column: "email"} #エラーメッセージの表示
         .form-group
           = f.password_field :password, placeholder: '8文字以上',class: 'login-input-text input-default'
+          -# = render partial: 'sign-in_error-messages', locals: {user: @user, column: "password"} #エラーメッセージの表示
         .form-group.robott
           = recaptcha_tags
         = f.button "ログイン", class: "login-submit btn-default btn-red"

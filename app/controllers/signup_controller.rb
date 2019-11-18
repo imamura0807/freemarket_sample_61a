@@ -75,7 +75,7 @@ class SignupController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      Payjp.api_key = 'sk_test_9f6a8ecef37254c2b61f6d4b'#トークン作成
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']#トークン作成
       if session[:payjp_token].blank?
         redirect_to payment_way_signup_index_path
       else
