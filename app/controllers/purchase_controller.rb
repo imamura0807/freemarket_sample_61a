@@ -1,14 +1,16 @@
 class PurchaseController < ApplicationController
   before_action :set_product, only: [:index,:buy]
-  before_action :set_card, only: [:index,:buy]
+ 
   def index
     @user = User.find(current_user.id)
+    card = current_user.card
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.retrieve(card.customer_id)
     @card_number = customer.cards.retrieve(card.card_id)
   end
 
   def buy #クレジットカードで商品購入
+    card = current_user.card
     if card.blank?
       redirect_to new_card_path
       flash[:alert] = '購入にはクレジットカード登録が必要です'
@@ -34,7 +36,4 @@ class PurchaseController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 
-  def set_card
-    card = current_user.card
-  end
 end
