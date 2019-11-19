@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function(){
   var preview = $('#preview');
   var preview2 = $('#preview2');
 
-  $(document).on('change', 'input[type= "file"].upload-image',function(event) {
+  $(document).on('change', 'input[type= "file"]#upload-image',function() {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     inputs.push($(this));
@@ -16,9 +16,7 @@ $(document).on('turbolinks:load', function(){
     reader.onload = function(e) {
       var btn_wrapper = $('<div class="btn_wrapper"><div class="btn_edit">編集</div><div class="btn_delete">削除</div></div>');
       img.append(btn_wrapper);
-      img.find('img').attr({
-        src: e.target.result
-      })
+      img.find('img').attr({src: e.target.result})
     }
     reader.readAsDataURL(file);
     images.push(img);
@@ -36,7 +34,7 @@ $(document).on('turbolinks:load', function(){
         })
         dropzone2.css({
           'display': 'block'
-        })
+        }).input_img_content 
         $.each(images, function(index, image) {
           image.attr('data-image', index);
           preview.append(image);
