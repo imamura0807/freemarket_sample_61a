@@ -89,7 +89,6 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'enum_help'
 gem 'active_hash'
-gem 'dropzonejs-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
 gem 'gon'
