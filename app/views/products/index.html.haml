@@ -27,13 +27,60 @@
     .item__box
       .box__list
         .name__box
-          .list__name 一覧表示
+          .list__name レーディース新着青テム
           = link_to '#' , class: 'mottomiru' do
             もっと見る
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "itirann", collection: @products, as: :product
+        = render partial: "category_women", collection: @category_women, as: :product
+    .item__box
+      .box__list
+        .name__box
+          .list__name メンズ新着アイテム
+          = link_to '#' , class: 'mottomiru' do
+            もっと見る
+            %i.fas.fa-chevron-right
+      .list__itirann
+      %ul.itirann
+        = render partial: "category_man", collection: @category_man, as: :product
+    .category
+      .category__list
+        スポーツ
+      .category__box
+        %ul.category__box-1
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              バスケットボール
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              サッカー
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              スケートボード
+          %li.category__box-2
+            = link_to '#' , class: 'category-link' do
+              スノーボード
+    .item__box
+      .box__list
+        .name__box
+          .list__name サッカー新着アイテム
+          = link_to '#' , class: 'mottomiru' do
+            もっと見る
+            %i.fas.fa-chevron-right
+      .list__itirann
+      %ul.itirann
+        = render partial: "category_soccer", collection: @category_soccer, as: :product
+    .item__box
+      .box__list
+        .name__box
+          .list__name スケートボード新着アイテム
+          = link_to '#' , class: 'mottomiru' do
+            もっと見る
+            %i.fas.fa-chevron-right
+      .list__itirann
+      %ul.itirann
+        = render partial: "category_snowboard", collection: @category_snowboard, as: :product
 
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
