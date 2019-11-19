@@ -1,6 +1,5 @@
 class PurchaseController < ApplicationController
-  before_action :set_product, only: [:index]
-
+  before_action :set_product, only: [:index,:buy]
   def index
     @user = User.find(current_user.id)
     card = Card.where(user_id: current_user.id).first
@@ -10,13 +9,11 @@ class PurchaseController < ApplicationController
   end
 
   def buy #クレジットカードで商品購入
-    card = Card.where(user_id: current_user.id)
+    card = current_user.card # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
     if card.blank?
       redirect_to new_card_path
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      @product = Product.find(params[:product_id]) # 購入した際の情報を元に引っ張ってくる
-      card = current_user.card # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
       amount: @product.price, #支払金額
