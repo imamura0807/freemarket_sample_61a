@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
 
   def index
-    # women_category = Category.find_by(name: "レディース")
     @category = Product.all
     @category_women = Product.where(:category_id => 1..199).limit(10).order(id: "DESC")
     @category_man = Product.where(:category_id => 200..345).limit(10).order(id: "DESC")
