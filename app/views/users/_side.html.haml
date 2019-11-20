@@ -2,7 +2,7 @@
 %nav.mypage__nav
   %ul.mypage__nav-list
     %li
-      = link_to '#',class: 'item ' do
+      = link_to user_path(current_user.id),class: 'item ' do
         マイページ
         %i.fal.fa-chevron-right
     %li
