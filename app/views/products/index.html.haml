@@ -33,7 +33,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_women", collection: @category_women, as: :product
+        = render partial: "category", collection: @category_women, as: :product
     .item__box
       .box__list
         .name__box
@@ -43,7 +43,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_man", collection: @category_man, as: :product
+        = render partial: "category", collection: @category_man, as: :product
     .category
       .category__list
         スポーツ
@@ -70,7 +70,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_soccer", collection: @category_soccer, as: :product
+        = render partial: "category", collection: @category_soccer, as: :product
     .item__box
       .box__list
         .name__box
@@ -80,8 +80,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_snowboard", collection: @category_snowboard, as: :product
-        
+        = render partial: "category", collection: @category_snowboard, as: :product
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
 = render partial: "users/footer"
