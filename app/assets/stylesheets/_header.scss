@@ -245,7 +245,7 @@
   }
   .parents__list {
     
-    background: white;
+    background:rgb(250, 243, 232);
     .now-selected-red{
       background: red;
       color: white;
@@ -253,7 +253,7 @@
   
   }
   .children_list {
-    background: white;
+    background:rgb(250, 243, 232);
     .now-selected-gray{
       background: rgb(204, 202, 202);
     }
@@ -261,7 +261,7 @@
     
   }
   .grand_children_list{
-    background: white;
+    background:rgb(250, 243, 232);
   }
   .grand_children_list li :hover{
     background: rgb(204, 202, 202);
