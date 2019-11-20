@@ -5,11 +5,11 @@ class ProductsController < ApplicationController
 
   def index
     # women_category = Category.find_by(name: "レディース")
-    @category = Product.all.order("created_at DESC")
-    @category_women = Product.where(:category_id => 1..199)
-    @category_man = Product.where(:category_id => 200..345)
-    @category_soccer= Product.where(:category_id => 1024..1031)
-    @category_snowboard= Product.where(:category_id => 1042..1053)
+    @category = Product.all
+    @category_women = Product.where(:category_id => 1..199).limit(10).order(id: "DESC")
+    @category_man = Product.where(:category_id => 200..345).limit(10).order(id: "DESC")
+    @category_soccer= Product.where(:category_id => 1024..1031).limit(10).order(id: "DESC")
+    @category_snowboard= Product.where(:category_id => 1042..1053).limit(10).order(id: "DESC")
   end
 
   def new
