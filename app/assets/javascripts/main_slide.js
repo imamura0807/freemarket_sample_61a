@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function(){
+
 $(function() {
   $('.slider_main_top').slick({
       prevArrow:'<i class="slider_left"></i>',
@@ -10,3 +12,4 @@ $(function() {
     $('.slider_main_top').slick('goTo', $(this).index());
   });
 });
+})
