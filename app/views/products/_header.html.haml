@@ -46,11 +46,10 @@
             = link_to '#', class: 'icon'  do
               %i.fal.fa-check
               やることリスト
-          .left__maipe-ji
-            -# = link_to '#' , class: 'icon'  do
+          .left__maipe-jib
             = link_to user_path(current_user.id) , class: 'icon'  do
               %i.fas.fa-user-circle
-              マイページ
+              = current_user.nickname
       - else
         .row-1__sign-in-log
           .new__registration

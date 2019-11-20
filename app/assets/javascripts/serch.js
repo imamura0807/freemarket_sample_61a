@@ -56,12 +56,11 @@ $(document).on('turbolinks:load', function(){
   //--------------humberger-list の表示、非表示 --------------------
   $(function(){
     $('.humberger').mouseover(function(){
-      $('.humberger__list').css('display','block');
+      $('.humberger__list').css('display','flex');
     })
   });
   $(function(){
     $('.contents').mouseover(function(){
-      console.log('ok2');
       $('.humberger__list').css('display','none')
     })
   });
