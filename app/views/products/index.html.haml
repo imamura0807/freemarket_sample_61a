@@ -81,22 +81,7 @@
       .list__itirann
       %ul.itirann
         = render partial: "category_snowboard", collection: @category_snowboard, as: :product
-
-
-
-    .item__box
-      .box__list
-        .name__box
-          .list__name レーディース新着アイテム
-          = link_to '#' , class: 'mottomiru' do
-            もっと見る
-            %i.fas.fa-chevron-right
-      .list__itirann
-      %ul.itirann
-        = render partial: "searches/product-card", collection: @category_women,  locals: { products: @category_women }
-
-
-
+        
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
 = render partial: "users/footer"
