@@ -7,7 +7,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to  edit_card_path if card.exists?
+    redirect_to  cards_path if card.exists?
   end
 
   def edit
@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   def show #Cardのデータpayjpに送り情報を取り出します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      redirect_to edit_card_path
+      redirect_to new_card_path
     else
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -48,9 +48,9 @@ class CardsController < ApplicationController
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy #削除に成功した時にポップアップを表示します。
-      redirect_to edit_card_path, notice: "削除しました"
+      redirect_to cards_path, notice: "削除しました"
     else #削除に失敗した時にアラートを表示します。
-      redirect_to edit_card_path, alert: "削除できませんでした"
+      redirect_to cards_path, alert: "削除できませんでした"
     end
   end
 
