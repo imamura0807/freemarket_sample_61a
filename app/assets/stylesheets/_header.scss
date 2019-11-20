@@ -228,9 +228,11 @@
 // ----------- ハンバーガーメニュー ---------------
 
 .humberger__list{
+  position: absolute;
   z-index: 1000;
   width: auto;
   display: none;
+  
   a{
     display: block;
     color:black;
@@ -242,11 +244,8 @@
     width:240px;
   }
   .parents__list {
-    position: absolute;
-    // top: 44px;
-    left: 0;
+    
     background: white;
-    z-index: 1000;
     .now-selected-red{
       background: red;
       color: white;
@@ -255,11 +254,6 @@
   }
   .children_list {
     background: white;
-    z-index: 1000;
-    // width:100%;
-    position: absolute;
-    // top:10px;
-    left:224px;
     .now-selected-gray{
       background: rgb(204, 202, 202);
     }
@@ -268,11 +262,6 @@
   }
   .grand_children_list{
     background: white;
-    z-index: 1000;
-    // width:100%;
-    position: absolute;
-    // top:10px;
-    left:460px;
   }
   .grand_children_list li :hover{
     background: rgb(204, 202, 202);

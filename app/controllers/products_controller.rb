@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
-
-  before_action :set_category, only: [:new, :create, :edit, :update]
   include CommonActions
+  before_action :set_category, only: [:new, :create, :edit, :update]
   before_action :set_parents #set_parentsはcontoroller/concerns/common_action.rbに記述
 
   def index
