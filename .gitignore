@@ -30,3 +30,4 @@
  /public/uploads/
  /.env
 *.jpeg
+*.jpg

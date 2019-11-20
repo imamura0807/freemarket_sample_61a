@@ -37,6 +37,9 @@
     height: 700px;
     display: flex;
     flex-wrap: wrap;
+    // width: 20%;
+    // padding: 10px;
+    // display: flex;
     &__product {
       height: 225px;
       width: 160px;
@@ -48,7 +51,7 @@
         width: 160px;
       }
       &__text-box {
-        height: 160px;
+       
         width: 100%;
         padding: 8px 12px;
         font-size: 14px;

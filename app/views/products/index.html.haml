@@ -33,7 +33,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_women", collection: @category_women, as: :product
+        = render partial: "category", collection: @category_women, as: :product
     .item__box
       .box__list
         .name__box
@@ -43,7 +43,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_man", collection: @category_man, as: :product
+        = render partial: "category", collection: @category_man, as: :product
     .category
       .category__list
         スポーツ
@@ -70,7 +70,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_soccer", collection: @category_soccer, as: :product
+        = render partial: "category", collection: @category_soccer, as: :product
     .item__box
       .box__list
         .name__box
@@ -80,23 +80,7 @@
             %i.fas.fa-chevron-right
       .list__itirann
       %ul.itirann
-        = render partial: "category_snowboard", collection: @category_snowboard, as: :product
-
-
-
-    .item__box
-      .box__list
-        .name__box
-          .list__name レーディース新着アイテム
-          = link_to '#' , class: 'mottomiru' do
-            もっと見る
-            %i.fas.fa-chevron-right
-      .list__itirann
-      %ul.itirann
-        = render partial: "searches/product-card", collection: @category_women,  locals: { products: @category_women }
-
-
-
+        = render partial: "category", collection: @category_snowboard, as: :product
 = render partial: "exhibit-btn" 
 = render partial: "users/banner"
 = render partial: "users/footer"
